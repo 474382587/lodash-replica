@@ -27,7 +27,7 @@ export class ArticleComponent implements OnInit {
     return false;
   }
 
-  ngOnInit() {  
+  ngOnInit() {
   }
 
 }
