@@ -8,7 +8,7 @@ import { Component, OnInit, Input } from "@angular/core";
 export class UserItemComponent implements OnInit {
   @Input() name: string;
 
-  constructor() {}
+  constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 }
