@@ -7,6 +7,7 @@ import { Article } from './article.model';
   styleUrls: ['./article.component.styl']
 })
 export class ArticleComponent implements OnInit {
+  articles: Article[]; // <-- component property
   @HostBinding('attr.class') cssClass = 'row';
   article: Article
 
