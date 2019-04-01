@@ -27,4 +27,10 @@ export class AppComponent implements OnInit {
     return false;
   }
 
+  sortedArticles(): Article[] {
+    return this.articles.sort((a: Article, b: Article) => {
+      return a.votes - b.votes
+    })
+  }
+
 }
