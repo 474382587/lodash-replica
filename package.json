@@ -1,0 +1,21 @@
+{
+  "name": "ng-book2-notes-5ce7b48c25b75bded108121e55db699a00f7ec67",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jerkjoe/ng-book2-notes.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jerkjoe/ng-book2-notes/issues"
+  },
+  "homepage": "https://github.com/jerkjoe/ng-book2-notes#readme"
+}
