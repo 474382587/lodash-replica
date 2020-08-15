@@ -76,7 +76,7 @@ const CustomNavbar = ({ pageInfo }) => {
                   <Link to="/team">我们的团队</Link>
                 </NavDropdown.Item>
               </NavDropdown>
-              <NavLink href='/about'>加入我们</NavLink>
+              <NavLink href='/join'>加入我们</NavLink>
             </Nav>
           </div>
           <div className="nav-right">

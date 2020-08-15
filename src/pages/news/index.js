@@ -1,69 +1,50 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import Layout from "../../components/layout"
 import { Carousel as AndtCarousel } from "antd"
 import { Row, Col, Container, Modal, Card, Button } from "react-bootstrap"
 
 import "./index.scss"
 
-const testPosts = [
-  {
-    title: "THis idas",
-    author: "Joseph Jin",
-    date: "2020-08-09",
-    excerpt:
-      "博客内容第一段Loving the additions to the new version of Mobirise web dev app. It's a great, cleanly designed, user-friendly, not-bloated design program. So easy and a pleasure to use",
-    thumbnail: require("../../images/1.png"),
-    tags: ["news"],
-  },
-  {
-    title: "THis idas",
-    author: "Joseph Jin",
-    date: "2020-08-09",
-    excerpt:
-      "博客内容第一段Loving the additions to the new version of Mobirise web dev app. It's a great, cleanly designed, user-friendly, not-bloated design program. So easy and a pleasure to use",
-    thumbnail: require("../../images/2.png"),
-    tags: ["featured"],
-  },
-  {
-    title: "THis idas",
-    author: "Joseph Jin",
-    date: "2020-08-09",
-    excerpt:
-      "博客内容第一段Loving the additions to the new version of Mobirise web dev app. It's a great, cleanly designed, user-friendly, not-bloated design program. So easy and a pleasure to use",
-    thumbnail: require("../../images/3.png"),
-    tags: ["seminar"],
-  },
-  {
-    title: "THis idas",
-    author: "Joseph Jin",
-    date: "2020-08-09",
-    excerpt:
-      "博客内容第一段Loving the additions to the new version of Mobirise web dev app. It's a great, cleanly designed, user-friendly, not-bloated design program. So easy and a pleasure to use",
-    thumbnail: require("../../images/2.png"),
-    tags: ["faq"],
-  },
-  {
-    title: "THis idas",
-    author: "Joseph Jin",
-    date: "2020-08-09",
-    excerpt:
-      "博客内容第一段Loving the additions to the new version of Mobirise web dev app. It's a great, cleanly designed, user-friendly, not-bloated design program. So easy and a pleasure to use",
-    thumbnail: require("../../images/3.png"),
-    tags: ["news"],
-  },
-]
-
-const News = () => {
-  let prev = null
+const Contentful = require("contentful")
+const News = ({ navigate }) => {
+  console.log(navigate)
   const [pageTitle, setPageTitle] = useState("新闻资讯")
-  const [posts, setPosts] = useState(testPosts)
-  const [displayPosts, setDisplayPosts] = useState(posts)
+  const [posts, setPosts] = useState([])
+  const [displayPosts, setDisplayPosts] = useState([])
+
+  const client = Contentful.createClient({
+    space: "xxnh1wfwedpb",
+    accessToken: "2tDLrcvmKpzOorRWsHgbwHodpFLzUHExcvtLrVw9w2E",
+  })
+
+  useEffect(() => {
+    client
+      .getEntries({
+        content_type: "postChinese",
+      })
+      .then(function(entries) {
+        console.dir(entries)
+        let res = []
+        if (entries.items.length > 0) {
+          res = entries.items.map(e => ({
+            ...e.fields,
+            image: e.fields.image.fields.file.url,
+            date: new Date(e.sys.createdAt).toDateString(),
+            id: e.sys.id,
+          }))
+          console.log(res)
+          setPosts(res)
+          setDisplayPosts(res)
+        }
+      })
+  }, [])
 
   const clearActiveFilter = () => {
     document.querySelector(".active").classList.remove("active")
   }
   const handleRowClick = postId => {
     console.log("clicked!")
+    navigate("/post/?id=" + postId)
   }
   const applyFilter = tag => {
     if (!!tag) {
@@ -143,14 +124,17 @@ const News = () => {
           <Row
             key={index}
             onClick={() => {
-              handleRowClick()
+              handleRowClick(post.id)
             }}
           >
             <Col sm="12" md="4">
-              <img width="100%" src={post.thumbnail} />
+              <img width="100%" src={post.image} />
             </Col>
             <Col sm="12" md="8" className="right">
-              <p className="excerpt">{post.excerpt}</p>
+              <div className="title-section">
+                <h6>{post.title}</h6>
+                <p className="excerpt">{post.excerpt}</p>
+              </div>
               <div className="date-author">
                 <p>{post.author}</p>
                 <p>{post.date}</p>

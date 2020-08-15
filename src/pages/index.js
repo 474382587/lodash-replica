@@ -248,7 +248,7 @@ const IndexPage = () => {
               xs="6"
               style={{ textAlign: "right", fontSize: 32 }}
             >
-              <Link to="/about">加入我们 ▶</Link>
+              <Link to="/join">加入我们 ▶</Link>
             </Col>
           </Row>
         </Container>

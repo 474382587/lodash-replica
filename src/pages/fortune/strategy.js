@@ -173,7 +173,7 @@ const Strategy = () => {
           }}
         >
           <Col md="6" sm="6" xs="6" style={{ fontSize: 32 }}>
-            住房贷款
+            <Link to="/fortune/plan">◀ 投资方案</Link>
           </Col>
           <Col
             md="6"
@@ -181,7 +181,7 @@ const Strategy = () => {
             xs="6"
             style={{ textAlign: "right", fontSize: 32 }}
           >
-            申请贷款
+            <Link to="/fortune/corporate">企业规划 ▶</Link>
           </Col>
         </Row>
       </Container>

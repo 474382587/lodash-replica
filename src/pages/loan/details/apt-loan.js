@@ -5,13 +5,13 @@ import { Row, Col, Container, Modal, Card, Button } from "react-bootstrap"
 
 // import "./services.scss"
 
-const newHome = () => {
+const aptLoan = () => {
   
   return (
-    <Layout pageInfo={{ pageName: "index" }}>
+    <Layout>
       
     </Layout>
   )
 }
 
-export default newHome
+export default aptLoan

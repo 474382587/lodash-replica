@@ -25,7 +25,7 @@ const Post = ({ location }) => {
       })
       const htmlString = documentToHtmlString(res.fields.content)
       if (typeof document !== "undefined") {
-          console.log(123)
+        console.log(123)
         document.querySelector(".html-content").innerHTML = htmlString
       }
       console.log(htmlString)

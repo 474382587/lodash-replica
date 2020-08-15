@@ -66,7 +66,7 @@ const Layout = ({ children, pageInfo }) => {
                   <Link to="/">订阅博客</Link>
                 </p>
                 <p>
-                  <Link to="/about">加入我们</Link>
+                  <Link to="/join">加入我们</Link>
                 </p>
                 <p>
                   <Link to="/about">关于温顶</Link>

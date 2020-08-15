@@ -75,7 +75,7 @@ const Plan = () => {
     }
   }
   return (
-    <Layout pageInfo={{ pageName: "index" }}>
+    <Layout>
       {/* Modal */}
       <Modal show={showModal} onHide={handleClose} centered>
         <Modal.Header closeButton>
@@ -186,7 +186,7 @@ const Plan = () => {
           }}
         >
           <Col md="6" sm="6" xs="6" style={{ fontSize: 32 }}>
-            住房贷款
+            <Link to="/fortune/strategy">◀ 理财策略</Link>
           </Col>
           <Col
             md="6"
@@ -194,7 +194,7 @@ const Plan = () => {
             xs="6"
             style={{ textAlign: "right", fontSize: 32 }}
           >
-            申请贷款
+          <Link to="/fortune/corporate">企业规划 ▶</Link>
           </Col>
         </Row>
       </Container>

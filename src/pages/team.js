@@ -3,60 +3,44 @@ import Layout from "../components/layout"
 import { Carousel as AndtCarousel } from "antd"
 import { Row, Col, Container, Modal, Card, Button } from "react-bootstrap"
 import "./team.scss"
-const testMembers = [
-  {
-    image: require("../images/2.png"),
-    name: "Joe Jin",
-    intro:
-      "是温顶金融的首席顾问导师，连续九年闯入百万圆桌会员精英行列（MDRT TOT），也是大温最年轻的女性百万圆桌会员。Carmen 持有多个金融牌照，目前名下管理资产过亿元。同时作为一名注册长者退休策划师的她，也是大温电台1320/1470 《财税教室》节目主持人。",
-  },
-  {
-    image: require("../images/2.png"),
-    name: "Pho Hin",
-    intro:
-      "是温顶金融的首席顾问导师，连续九年闯入百万圆桌会员精英行列（MDRT TOT），也是大温最年轻的女性百万圆桌会员。Carmen 持有多个金融牌照，目前名下管理资产过亿元。同时作为一名注册长者退休策划师的她，也是大温电台1320/1470 《财税教室》节目主持人。",
-  },
-  {
-    image: require("../images/2.png"),
-    name: "John Doe",
-    intro:
-      "是温顶金融的首席顾问导师，连续九年闯入百万圆桌会员精英行列（MDRT TOT），也是大温最年轻的女性百万圆桌会员。Carmen 持有多个金融牌照，目前名下管理资产过亿元。同时作为一名注册长者退休策划师的她，也是大温电台1320/1470 《财税教室》节目主持人。",
-  },
-  {
-    image: require("../images/2.png"),
-    name: "Dol Sere",
-    intro:
-      "是温顶金融的首席顾问导师，连续九年闯入百万圆桌会员精英行列（MDRT TOT），也是大温最年轻的女性百万圆桌会员。Carmen 持有多个金融牌照，目前名下管理资产过亿元。同时作为一名注册长者退休策划师的她，也是大温电台1320/1470 《财税教室》节目主持人。",
-  },
-  {
-    image: require("../images/2.png"),
-    name: "Phonex Dee",
-    intro:
-      "是温顶金融的首席顾问导师，连续九年闯入百万圆桌会员精英行列（MDRT TOT），也是大温最年轻的女性百万圆桌会员。Carmen 持有多个金融牌照，目前名下管理资产过亿元。同时作为一名注册长者退休策划师的她，也是大温电台1320/1470 《财税教室》节目主持人。",
-  },
-  {
-    image: require("../images/2.png"),
-    name: "Bob Lee",
-    intro:
-      "是温顶金融的首席顾问导师，连续九年闯入百万圆桌会员精英行列（MDRT TOT），也是大温最年轻的女性百万圆桌会员。Carmen 持有多个金融牌照，目前名下管理资产过亿元。同时作为一名注册长者退休策划师的她，也是大温电台1320/1470 《财税教室》节目主持人。",
-  },
-  {
-    image: require("../images/2.png"),
-    name: "Hell Lin",
-    intro:
-      "是温顶金融的首席顾问导师，连续九年闯入百万圆桌会员精英行列（MDRT TOT），也是大温最年轻的女性百万圆桌会员。Carmen 持有多个金融牌照，目前名下管理资产过亿元。同时作为一名注册长者退休策划师的她，也是大温电台1320/1470 《财税教室》节目主持人。",
-  },
-]
+import { Link } from "gatsby"
+
+const Contentful = require("contentful")
 
 const Team = () => {
+  const client = Contentful.createClient({
+    space: "xxnh1wfwedpb",
+    accessToken: "2tDLrcvmKpzOorRWsHgbwHodpFLzUHExcvtLrVw9w2E",
+  })
+
+  useEffect(() => {
+    client
+      .getEntries({
+        content_type: "membersChinese",
+      })
+      .then(function(entries) {
+        console.dir(entries)
+        let res = []
+        if (entries.items.length > 0) {
+          res = entries.items.map(e => ({
+            ...e.fields,
+            image: e.fields.image.fields.file.url,
+            date: new Date(e.sys.createdAt).toDateString(),
+            id: e.sys.id,
+          }))
+          console.log(res)
+          setMembers(res)
+        }
+      })
+  }, [])
   const [members, setMembers] = useState([])
   const [showModal, setShowModal] = useState(false)
   const [title, setTitle] = useState(false)
   const [content, setContent] = useState(false)
-  useEffect(() => {
-    setMembers(testMembers)
-  }, [])
-  
+  //   useEffect(() => {
+  //     setMembers(testMembers)
+  //   }, [])
+
   let slidesToShow = 5
 
   if (typeof window !== `undefined`) {
@@ -75,7 +59,6 @@ const Team = () => {
     setTitle(title)
     setContent(content)
   }
-  
 
   return (
     <Layout>
@@ -207,7 +190,7 @@ const Team = () => {
           }}
         >
           <Col md="6" sm="6" xs="6" style={{ fontSize: 32 }}>
-            公司介绍
+            <Link to="/about"> ◀公司介绍 </Link>
           </Col>
           <Col
             md="6"
@@ -215,7 +198,7 @@ const Team = () => {
             xs="6"
             style={{ textAlign: "right", fontSize: 32 }}
           >
-            加入我们
+            <Link to="/join"> 加入我们 ▶</Link>
           </Col>
         </Row>
       </Container>
