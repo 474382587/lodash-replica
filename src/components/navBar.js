@@ -68,7 +68,7 @@ const CustomNavbar = ({ pageInfo }) => {
               </NavDropdown>
               <NavLink href="/news">新闻资讯</NavLink>
               
-              <NavDropdown renderMenuOnMount={true} title="关于温鼎">
+              <NavDropdown renderMenuOnMount={true} title="关于温顶">
                 <NavDropdown.Item as="div">
                   <Link to="/about">公司介绍</Link>
                 </NavDropdown.Item>

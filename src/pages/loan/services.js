@@ -74,17 +74,15 @@ const Services = () => {
   return (
     <Layout pageInfo={{ pageName: "index" }}>
       {/* Modal */}
-      <Modal show={showModal} onHide={handleClose} centered>
-        <Modal.Header closeButton>
-          <Modal.Title>{title}</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>{content}</Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-        </Modal.Footer>
-      </Modal>
+      <div
+        className="floater"
+      >
+        <p style={{
+            marginBottom: 0
+        }}>
+          邮件: info@guaranti.ca <br></br>电话: +1 (778) 297 7450
+        </p>
+      </div>
       <Container className="mt-5 loan-services">
         <h1
           style={{
