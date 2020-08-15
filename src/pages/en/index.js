@@ -19,13 +19,13 @@ import "./index.scss"
 const Contentful = require("contentful")
 const IndexPage = props => {
   let slidesToShow = 4
-  if (typeof window === `undefined`) {
-    return <div></div>
-  }
-  const windowWidth = window.innerWidth
-  console.log(props)
-  if (windowWidth < 768) {
-    slidesToShow = 1
+
+  if (typeof window !== `undefined`) {
+    const windowWidth = window.innerWidth
+    console.log(windowWidth)
+    if (windowWidth < 768) {
+      slidesToShow = 1
+    }
   }
 
   const [banners, setBanners] = useState([])

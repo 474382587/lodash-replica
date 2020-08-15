@@ -6,7 +6,7 @@
     .slick-next {
       right: 20px;
       // font-size: 16px;
-      color: #fff;
+      color: #999;
       width: auto;
       &::before {
         font-size: 20px;
@@ -18,7 +18,7 @@
     .slick-prev {
       z-index: 1;
       left: 20px;
-      color: #fff;
+      color: #999;
       width: auto;
       &::before {
         font-size: 20px;
@@ -39,7 +39,7 @@
     .btn.btn-primary {
       background: #e6d29b;
       border: 2px solid #000;
-      padding: 8px 18px;
+      padding: 10px 30px;
       color: #000;
     }
     .btn.btn-primary:hover {

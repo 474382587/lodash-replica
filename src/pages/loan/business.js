@@ -44,13 +44,12 @@ const Business = () => {
   }
 
   let slidesToShow = 5
-  if (typeof window === `undefined`) {
-    return <div></div>
-  }
-  const windowWidth = window.innerWidth
-  console.log(windowWidth)
-  if (windowWidth < 768) {
-    slidesToShow = 1
+  if (typeof window !== `undefined`) {
+    const windowWidth = window.innerWidth
+    console.log(windowWidth)
+    if (windowWidth < 768) {
+      slidesToShow = 1
+    }
   }
   return (
     <Layout pageInfo={{ pageName: "index" }}>
@@ -81,7 +80,7 @@ const Business = () => {
           ——
           而非代表贷款机构方，为您锁定最佳利率、搜寻当下市场中最好的贷款产品，制定最切合您财务状况的贷款方案。丰富的贷款方案满足您的独特需求。
         </h3>
-        <h4 className="mt-5">住房贷款</h4>
+        <h4 className="mt-5">商业贷款</h4>
         <Row>
           {services.map((item, index) => {
             return (
@@ -90,7 +89,9 @@ const Business = () => {
                   <Card.Img variant="top" src={require("../../images/1.png")} />
                   <Card.Body>
                     <Card.Title>{item.title}</Card.Title>
-                    <Link className='btn btn-primary' to={item.slug}>了解更多</Link>
+                    <Link className="btn btn-primary" to={item.slug}>
+                      了解更多
+                    </Link>
                   </Card.Body>
                 </Card>
               </Col>
@@ -136,28 +137,28 @@ const Business = () => {
           <AndtCarousel
             autoplay={true}
             slidesToShow={slidesToShow}
-            autoplaySpeed={3000}
+            autoplaySpeed={2000}
             arrows={true}
             dots={false}
             arrows
           >
             <div className="image-container">
-              <img width="100%" src={require("../../images/1.png")} />
+              <img width="100%" src={require("../../images/partners/1.png")} />
             </div>
             <div className="image-container">
-              <img width="100%" src={require("../../images/2.png")} />
+              <img width="100%" src={require("../../images/partners/2.png")} />
             </div>
             <div className="image-container">
-              <img width="100%" src={require("../../images/3.png")} />
+              <img width="100%" src={require("../../images/partners/3.png")} />
             </div>
             <div className="image-container">
-              <img width="100%" src={require("../../images/1.png")} />
+              <img width="100%" src={require("../../images/partners/4.png")} />
             </div>
             <div className="image-container">
-              <img width="100%" src={require("../../images/2.png")} />
+              <img width="100%" src={require("../../images/partners/5.png")} />
             </div>
             <div className="image-container">
-              <img width="100%" src={require("../../images/3.png")} />
+              <img width="100%" src={require("../../images/partners/6.png")} />
             </div>
           </AndtCarousel>
         </div>
@@ -168,7 +169,7 @@ const Business = () => {
           }}
         >
           <Col md="6" sm="6" xs="6" style={{ fontSize: 32 }}>
-            住房贷款
+            <Link to="/loan/services">住房贷款</Link>
           </Col>
           <Col
             md="6"
@@ -176,7 +177,7 @@ const Business = () => {
             xs="6"
             style={{ textAlign: "right", fontSize: 32 }}
           >
-            申请贷款
+          <Link to="/about">申请贷款</Link>
           </Col>
         </Row>
       </Container>

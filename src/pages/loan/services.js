@@ -64,13 +64,12 @@ const Services = () => {
     setContent(content)
   }
   let slidesToShow = 5
-  if (typeof window === `undefined`) {
-    return <div></div>
-  }
-  const windowWidth = window.innerWidth
-  console.log(windowWidth)
-  if (windowWidth < 768) {
-    slidesToShow = 1
+  if (typeof window !== `undefined`) {
+    const windowWidth = window.innerWidth
+    console.log(windowWidth)
+    if (windowWidth < 768) {
+      slidesToShow = 1
+    }
   }
   return (
     <Layout pageInfo={{ pageName: "index" }}>
@@ -105,7 +104,7 @@ const Services = () => {
             return (
               <Col md="4" sm="12" key={index}>
                 <Card style={{ width: "100%" }}>
-                  <Card.Img variant="top" src={require("../../images/1.png")} />
+                  <Card.Img variant="top" src={require("../../images/1.jpg")} />
                   <Card.Body>
                     <Card.Title>{item.title}</Card.Title>
                     {/**<Button
@@ -162,28 +161,28 @@ const Services = () => {
           <AndtCarousel
             autoplay={true}
             slidesToShow={slidesToShow}
-            autoplaySpeed={3000}
+            autoplaySpeed={2000}
             arrows={true}
             dots={false}
             arrows
           >
             <div className="image-container">
-              <img width="100%" src={require("../../images/1.png")} />
+              <img width="100%" src={require("../../images/partners/1.png")} />
             </div>
             <div className="image-container">
-              <img width="100%" src={require("../../images/2.png")} />
+              <img width="100%" src={require("../../images/partners/2.png")} />
             </div>
             <div className="image-container">
-              <img width="100%" src={require("../../images/3.png")} />
+              <img width="100%" src={require("../../images/partners/3.png")} />
             </div>
             <div className="image-container">
-              <img width="100%" src={require("../../images/1.png")} />
+              <img width="100%" src={require("../../images/partners/4.png")} />
             </div>
             <div className="image-container">
-              <img width="100%" src={require("../../images/2.png")} />
+              <img width="100%" src={require("../../images/partners/5.png")} />
             </div>
             <div className="image-container">
-              <img width="100%" src={require("../../images/3.png")} />
+              <img width="100%" src={require("../../images/partners/6.png")} />
             </div>
           </AndtCarousel>
         </div>
@@ -208,7 +207,7 @@ const Services = () => {
           }}
         >
           <Col md="6" sm="6" xs="6" style={{ fontSize: 32 }}>
-            其他贷款
+            <Link to="/loan/business">其他贷款</Link>
           </Col>
           <Col
             md="6"
@@ -216,7 +215,7 @@ const Services = () => {
             xs="6"
             style={{ textAlign: "right", fontSize: 32 }}
           >
-            申请贷款
+            <Link to="/about">申请贷款</Link>
           </Col>
         </Row>
       </Container>

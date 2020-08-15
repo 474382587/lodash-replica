@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Joseph Jin",
   "dependencies": {
+    "@contentful/rich-text-html-renderer": "^14.1.1",
     "antd": "^4.4.2",
     "bootstrap": "^4.3.1",
     "contentful": "^7.14.6",

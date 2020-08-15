@@ -67,13 +67,12 @@ const Plan = () => {
   }
 
   let slidesToShow = 4
-  if (typeof window === `undefined`) {
-    return <div></div>
-  }
-  const windowWidth = window.innerWidth
-  console.log(windowWidth)
-  if (windowWidth < 768) {
-    slidesToShow = 1
+  if (typeof window !== `undefined`) {
+    const windowWidth = window.innerWidth
+    console.log(windowWidth)
+    if (windowWidth < 768) {
+      slidesToShow = 1
+    }
   }
   return (
     <Layout pageInfo={{ pageName: "index" }}>

@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import Layout from "../../components/layout"
 import {
   Row,
@@ -10,46 +10,46 @@ import {
   Carousel,
 } from "react-bootstrap"
 import "./cases.scss"
+import { Link } from "gatsby"
 
 const Contentful = require("contentful")
-const arr = [
-  {
-    title: "案例1",
-    content:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam erat fringilla porttitor pretium",
-  },
-  {
-    title: "案例2",
-    content:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam erat fringilla porttitor pretium",
-  },
-  {
-    title: "案例3",
-    content:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam erat fringilla porttitor pretium",
-  },
-]
+
 
 const Cases = () => {
-  const [banners, setBanners] = useState([])
+  const [cases, setCases] = useState([])
 
   const client = Contentful.createClient({
-    space: "1u2l88u90bu7",
-    accessToken: "Hoh3zn4V3KzIt9pD8qf7bHA1mqqVr6Tzq036L9UsdL0",
+    space: "xxnh1wfwedpb",
+    accessToken: "2tDLrcvmKpzOorRWsHgbwHodpFLzUHExcvtLrVw9w2E",
   })
 
-  client
-    .getEntries({
-      content_type: "homePageBanners",
-    })
-    .then(function(entries) {
-      // log the title for all the entries that have it
-      entries.items.forEach(function(entry) {
-        if (entry.fields.productName) {
-          console.log(entry.fields.productName)
-        }
+  useEffect(() => {
+    client
+      .getEntries({
+        content_type: "postChinese",
       })
-    })
+      .then(function(entries) {
+        console.dir(entries)
+        let res = []
+        if (entries.items.length > 0) {
+          res = entries.items
+            .filter(e => e.fields.tags.includes("cases"))
+            .map(e => ({
+              ...e.fields,
+              image: e.fields.image.fields.file.url,
+              date: new Date(e.sys.createdAt).toDateString(),
+              id: e.sys.id,
+            }))
+          setCases(res)
+        }
+        // log the title for all the entries that have it
+        entries.items.forEach(function(entry) {
+          if (entry.fields.productName) {
+            console.log(entry.fields.productName)
+          }
+        })
+      })
+  }, [])
 
   return (
     <Layout>
@@ -64,16 +64,14 @@ const Cases = () => {
           websites in a few clicks.
         </h3>
         <Row className="mt-5">
-          {arr.map(e => (
-            <Col md="4" sm="12">
+          {cases.map(e => (
+            <Col md="4" sm="12" key={e.id}>
               <Card style={{ width: "100%" }}>
-                <Card.Img variant="top" src={require("../../images/1.png")} />
+                <Card.Img variant="top" src={e.image} />
                 <Card.Body>
                   <Card.Title>{e.title}</Card.Title>
-                  <Card.Text>
-                    温顶贷款拥有加拿大华人第一贷款团队，为客户提供各大银行最优利率、专业团队一站式服务。
-                  </Card.Text>
-                  <Button variant="primary">更多</Button>
+                  <Card.Text>{e.excerpt}</Card.Text>
+                  <Link className="btn btn-primary" to={'/post?id=' + e.id}>了解更多</Link>
                 </Card.Body>
               </Card>
             </Col>

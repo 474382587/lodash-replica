@@ -20,24 +20,24 @@ import { Link } from "gatsby"
 const Contentful = require("contentful")
 const IndexPage = () => {
   let slidesToShow = 4
-  if (typeof window === `undefined`) {
-    return <div></div>
-  }
-  const windowWidth = window.innerWidth
-  console.log(windowWidth)
-  if (windowWidth < 768) {
-    slidesToShow = 1
+
+  if (typeof window !== `undefined`) {
+    const windowWidth = window.innerWidth
+    console.log(windowWidth)
+    if (windowWidth < 768) {
+      slidesToShow = 1
+    }
   }
 
   const [banners, setBanners] = useState([])
   const client = Contentful.createClient({
-    space: "1u2l88u90bu7",
-    accessToken: "Hoh3zn4V3KzIt9pD8qf7bHA1mqqVr6Tzq036L9UsdL0",
+    space: "xxnh1wfwedpb",
+    accessToken: "2tDLrcvmKpzOorRWsHgbwHodpFLzUHExcvtLrVw9w2E",
   })
   useEffect(() => {
     client
       .getEntries({
-        content_type: "homePageBanners",
+        content_type: "homePageBannersChinese",
       })
       .then(function(entries) {
         // log the title for all the entries that have it
@@ -240,7 +240,7 @@ const IndexPage = () => {
             }}
           >
             <Col md="6" sm="6" xs="6" style={{ fontSize: 32 }}>
-              关于温顶
+              <Link to="/about">◀ 关于温顶</Link>
             </Col>
             <Col
               md="6"
@@ -248,66 +248,7 @@ const IndexPage = () => {
               xs="6"
               style={{ textAlign: "right", fontSize: 32 }}
             >
-              新闻资讯
-            </Col>
-          </Row>
-        </Container>
-
-        <Container className="margin-top80 text-center">
-          <Row>
-            <Col>
-              <p>
-                This is a Gatsby Starter that I frequently use to get jump
-                started on quick website builds. It includes the following
-                packages:
-              </p>
-            </Col>
-          </Row>
-          <Row className="justify-content-center my-3">
-            <Col md="6">
-              <ListGroup>
-                <ListGroup.Item
-                  action
-                  href="https://getbootstrap.com"
-                  target="_blank"
-                >
-                  Bootstrap
-                </ListGroup.Item>
-                <ListGroup.Item
-                  action
-                  href="https://react-bootstrap.github.io/"
-                  target="_blank"
-                >
-                  react-bootstrap
-                </ListGroup.Item>
-                <ListGroup.Item
-                  action
-                  href="https://react-icons.netlify.com"
-                  target="_blank"
-                >
-                  react-icons
-                </ListGroup.Item>
-                <ListGroup.Item
-                  action
-                  href="https://www.gatsbyjs.org/packages/gatsby-plugin-sass/"
-                  target="_blank"
-                >
-                  gatsby-plugin-sass
-                </ListGroup.Item>
-              </ListGroup>
-            </Col>
-          </Row>
-          <Row>
-            <Col>
-              <p>
-                This starter also includes a navbar that sticks to the top of
-                the screen when the user scrolls past it, and a footer that
-                stays at the bottom of the screen.
-              </p>
-              <p>
-                For more documentation on these packages and how they work,
-                please refer to the pages linked in the list above.
-              </p>
+              <Link to="/about">加入我们 ▶</Link>
             </Col>
           </Row>
         </Container>

@@ -5,16 +5,16 @@ import { Row, Col, Container, Modal, Card, Button } from "react-bootstrap"
 import "./about.scss"
 
 const About = () => {
-  if (typeof window === `undefined`) {
-    return <div></div>
+  let slidesToShow = 5
+
+  if (typeof window !== `undefined`) {
+    const windowWidth = window.innerWidth
+    console.log(windowWidth)
+    if (windowWidth < 768) {
+      slidesToShow = 1
+    }
   }
 
-  let slidesToShow = 5
-  const windowWidth = window.innerWidth
-  console.log(windowWidth)
-  if (windowWidth < 768) {
-    slidesToShow = 1
-  }
   return (
     <Layout>
       <Container className="about-services">

@@ -49,20 +49,23 @@ const testMembers = [
 ]
 
 const Team = () => {
-  let slidesToShow = 5
-  if (typeof window === `undefined`) {
-    return <div></div>
-  }
-  const windowWidth = window.innerWidth
-  console.log(windowWidth)
-  if (windowWidth < 768) {
-    slidesToShow = 1
-  }
-
   const [members, setMembers] = useState([])
   const [showModal, setShowModal] = useState(false)
   const [title, setTitle] = useState(false)
   const [content, setContent] = useState(false)
+  useEffect(() => {
+    setMembers(testMembers)
+  }, [])
+  
+  let slidesToShow = 5
+
+  if (typeof window !== `undefined`) {
+    const windowWidth = window.innerWidth
+    console.log(windowWidth)
+    if (windowWidth < 768) {
+      slidesToShow = 1
+    }
+  }
 
   const handleClose = () => {
     setShowModal(false)
@@ -72,9 +75,7 @@ const Team = () => {
     setTitle(title)
     setContent(content)
   }
-  useEffect(() => {
-    setMembers(testMembers)
-  }, [])
+  
 
   return (
     <Layout>
