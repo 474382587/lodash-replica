@@ -70,7 +70,9 @@ const CustomNavbar = ({ pageInfo, handleOpen }) => {
                   <Link to="/insurance/asset">财产保险</Link>
                 </NavDropdown.Item>
               </NavDropdown>
-              <NavLink href="/news">新闻资讯</NavLink>
+              <NavLink href="/news" className="add-arrow">
+                新闻资讯
+              </NavLink>
 
               <NavDropdown renderMenuOnMount={true} title="关于温顶">
                 <NavDropdown.Item as="div">
@@ -80,7 +82,9 @@ const CustomNavbar = ({ pageInfo, handleOpen }) => {
                   <Link to="/team">我们的团队</Link>
                 </NavDropdown.Item>
               </NavDropdown>
-              <NavLink href="/join">加入我们</NavLink>
+              <NavLink className="add-arrow" href="/join">
+                加入我们
+              </NavLink>
             </Nav>
           </div>
           <div className="nav-right">
