@@ -75,7 +75,7 @@ const Strategy = () => {
           <b>电话:</b> <a href="tel:+1 (778) 297 7450">+1 (778) 297 7450</a>{" "}
           <br></br>
           <div className="img-wrapper">
-            <img width="120" src={require("../../images/qrcode.jpg")} />
+            <img width="120" src={require("../../images/baoxian-caishui.jpg")} />
           </div>
         </p>
       </div>
