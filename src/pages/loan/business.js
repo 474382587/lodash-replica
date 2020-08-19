@@ -54,17 +54,21 @@ const Business = () => {
   return (
     <Layout pageInfo={{ pageName: "index" }}>
       {/* Modal */}
-      <Modal show={showModal} onHide={handleClose} centered>
-        <Modal.Header closeButton>
-          <Modal.Title>{title}</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>{content}</Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-        </Modal.Footer>
-      </Modal>
+      <div className="floater">
+        <p
+          style={{
+            marginBottom: 0,
+          }}
+        >
+          <b>邮件:</b> <a href="mailto:info@guaranti.ca">info@guaranti.ca</a>
+          <br></br>
+          <b>电话:</b> <a href="tel:+1 (778) 297 7450">+1 (778) 297 7450</a>{" "}
+          <br></br>
+          <div className="img-wrapper">
+            <img width="120" src={require("../../images/qrcode.jpg")} />
+          </div>
+        </p>
+      </div>
       <Container className="mt-5 business-services">
         <h1
           style={{
@@ -177,7 +181,9 @@ const Business = () => {
             xs="6"
             style={{ textAlign: "right", fontSize: 32 }}
           >
-          <a href="http://sv.mikecrm.com/JcYy9jm" target="_blank">申请贷款  ▶</a>
+            <a href="http://sv.mikecrm.com/JcYy9jm" target="_blank">
+              申请贷款 ▶
+            </a>
           </Col>
         </Row>
       </Container>
