@@ -53,6 +53,11 @@
     }
   }
   .subscribe-box {
+    h3 {
+      a {
+        color: #ac843c;
+      }
+    }
     margin: 40px 0 0;
     border-radius: 10px;
     border: 2px solid #e0e0e0;

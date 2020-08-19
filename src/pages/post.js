@@ -55,10 +55,10 @@ const Post = ({ location }) => {
       </Modal>
       <Container className="post-item">
         <Row>
-          <Col md="3" sm="12">
+        <Col md="3" sm="12">
             <div className="subscribe-box">
               <div>
-                <h3>Subscribe now</h3>
+                <h3><a href="http://sv.mikecrm.com/LJVlNbV" target="_blank">Subscribe now</a></h3>
                 <p>Get personal finance info with our monthly round-up.</p>
               </div>
               <div class="social-media">

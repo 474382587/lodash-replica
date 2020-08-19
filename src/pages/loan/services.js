@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import Layout from "../../components/layout"
 import { Carousel as AndtCarousel } from "antd"
 import { Row, Col, Container, Modal, Card, Button } from "react-bootstrap"
@@ -50,8 +50,9 @@ const services = [
     img: "",
   },
 ]
-
+const Contentful = require("contentful")
 const Services = () => {
+  const [post, setPost] = useState([])
   const [showModal, setShowModal] = useState(false)
   const [title, setTitle] = useState(false)
   const [content, setContent] = useState(false)
@@ -71,6 +72,35 @@ const Services = () => {
       slidesToShow = 1
     }
   }
+
+  const client = Contentful.createClient({
+    space: "xxnh1wfwedpb",
+    accessToken: "2tDLrcvmKpzOorRWsHgbwHodpFLzUHExcvtLrVw9w2E",
+  })
+  useEffect(() => {
+    client
+      .getEntries({
+        content_type: "postChinese",
+      })
+      .then(function(entries) {
+        console.dir(entries)
+        let res = []
+        if (entries.items.length > 0) {
+          res = entries.items
+            .filter(e => e.fields.tags.includes("cases"))
+            .map(e => ({
+              ...e.fields,
+              image: e.fields.image.fields.file.url,
+              date: new Date(e.sys.createdAt).toDateString(),
+              id: e.sys.id,
+            }))
+          console.log(res)
+          if (res.length > 0) {
+            setPost(res[0])
+          }
+        }
+      })
+  }, [])
   return (
     <Layout pageInfo={{ pageName: "index" }}>
       {/* Modal */}
@@ -191,20 +221,29 @@ const Services = () => {
           </AndtCarousel>
         </div>
 
-        <Row className="flexie">
-          <Col md="4" sm="12">
-            <div className="image-container">
-              <img width="100%" src={require("../../images/2.png")} />
-            </div>
-          </Col>
-          <Col md="8" sm="12">
-            <h6>最新成功案例</h6>
-            <p>
-              适合二次贷款，或三次贷款，或无收入证明，或需要特快批下贷款的客户...
-              <a> 查看更多</a>
-            </p>
-          </Col>
-        </Row>
+        {post ? (
+          <Row className="flexie">
+            <Col md="4" sm="12">
+              <div className="image-container">
+                <img width="100%" src={post.image} />
+              </div>
+            </Col>
+            <Col md="8" sm="12">
+              {/** <h6>最新成功案例</h6> */}
+              <h5>{post.title}</h5>
+              <p>
+                {post.excerpt} - 
+                <Link
+                  to={'/post/?id=' + post.id}
+                >
+                  查看更多
+                </Link>
+              </p>
+            </Col>
+          </Row>
+        ) : (
+          ""
+        )}
         <Row
           style={{
             marginTop: 30,
@@ -219,7 +258,9 @@ const Services = () => {
             xs="6"
             style={{ textAlign: "right", fontSize: 32 }}
           >
-            <Link to="/about">申请贷款 ▶</Link>
+            <a href="http://sv.mikecrm.com/JcYy9jm" target="_blank">
+              申请贷款 ▶
+            </a>
           </Col>
         </Row>
       </Container>

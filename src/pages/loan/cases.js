@@ -84,7 +84,9 @@ const Cases = () => {
           }}
         >
           <Col md="6" sm="6" xs="6" style={{ fontSize: 32 }}>
-            <Link to="/about">◀ 申请贷款</Link>
+            <a href="http://sv.mikecrm.com/JcYy9jm" target="_blank">
+            ◀  申请贷款 
+            </a>
           </Col>
           <Col
             md="6"

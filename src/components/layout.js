@@ -58,7 +58,7 @@ const Layout = ({ children, pageInfo }) => {
                 />
               </a>
             </Col>
-            <Col lg="3" md="3" sm="12">
+            <Col lg="2" md="2" sm="12">
               <div className="footer-content">
                 <p>
                   <Link to="/loan/services">贷款按揭</Link>
@@ -75,20 +75,22 @@ const Layout = ({ children, pageInfo }) => {
               <div className="footer-content">
                 <h5>联系我们</h5>
                 <p>
-                  <b>邮件:</b>{" "}
-                  <a href="mailto:info@guaranti.ca">info@guaranti.ca</a>
+                  邮件: <a href="mailto:info@guaranti.ca">info@guaranti.ca</a>
                   <br></br>
-                  <b>电话:</b>{" "}
-                  <a href="tel:+1 (778) 297 7450">+1 (778) 297 7450</a>{" "}
+                  电话: <a href="tel:+1 (778) 297 7450">
+                    +1 (778) 297 7450
+                  </a>{" "}
                   <br></br>
-                  <b>地址:</b> #205 - 6011 Westminster<br></br>Hwy, Richmond, BC
+                  地址: #205 - 6011 Westminster<br></br>Hwy, Richmond, BC
                 </p>
               </div>
             </Col>
-            <Col lg="3" md="3" sm="12">
+            <Col lg="2" md="2" sm="12">
               <div className="footer-content">
                 <p>
-                  <Link to="/">订阅博客</Link>
+                  <a href="http://sv.mikecrm.com/LJVlNbV" target="_blank">
+                    订阅博客
+                  </a>
                 </p>
                 <p>
                   <Link to="/join">加入我们</Link>
@@ -97,6 +99,9 @@ const Layout = ({ children, pageInfo }) => {
                   <Link to="/about">关于温顶</Link>
                 </p>
               </div>
+            </Col>
+            <Col lg="2" md="2" sm="12">
+                <img width="120" src={require('../images/qrcode.jpg')} />
             </Col>
           </Row>
           <Row noGutters className="lower-footer">
