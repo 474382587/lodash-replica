@@ -109,11 +109,20 @@ a.ml {
 }
 
 .service-container {
+  .nav-links {
+    margin-top: 50px;
+  }
+  a {
+    color: #000;
+    &:hover {
+      color: #000;
+    }
+  }
   h1 {
     text-align: center;
     margin: 50px auto;
   }
   p {
-      font-size: 20px;
+    font-size: 20px;
   }
 }
