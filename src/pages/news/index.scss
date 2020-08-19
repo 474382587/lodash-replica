@@ -47,13 +47,15 @@
       color: #fff;
     }
     .btn.btn-primary.active {
-      background: #000;
-      color: #fff;
+      background: #e4d295;
+      border-color: #e4d295;
+      color: #000;
     }
   }
   .subscribe-box {
-      border-radius: 10px;
-      border: 2px solid #e0e0e0;
-      padding: 20px;
+    margin: 40px 0 0;
+    border-radius: 10px;
+    border: 2px solid #e0e0e0;
+    padding: 20px;
   }
 }

@@ -1,4 +1,7 @@
 .floater {
+  a {
+    color: #000;
+  }
   position: fixed;
   top: 40vh;
   padding: 30px;
@@ -8,6 +11,10 @@
   border: 1px solid #aaa;
   border-radius: 5px;
   box-shadow: 4px 4px 5px 0 #777;
+  .img-wrapper {
+      margin: 20px 0 0;
+    text-align: center;
+  }
 }
 @media screen and (max-width: 991px) {
   .floater {

@@ -5,21 +5,42 @@
  * See: https://www.gatsbyjs.org/docs/static-query/
  */
 
-import React, { Fragment } from "react"
+import React, { Fragment, useState } from "react"
 // import { StaticQuery, graphql } from "gatsby"
 
-import { Container, Row, Col } from "react-bootstrap"
+import { Container, Row, Col, Modal, Button } from "react-bootstrap"
 import { FaLinkedinIn, FaFacebookF } from "react-icons/fa"
 import { AiFillWechat, AiFillInstagram } from "react-icons/ai"
 import Header from "./header"
 import Navbar from "./navBar"
 import { Link } from "gatsby"
-import './layout.scss'
+import "./layout.scss"
+
 const Layout = ({ children, pageInfo }) => {
+  const [showModal, setShowModal] = useState(false)
+  const handleClose = () => {
+    setShowModal(false)
+  }
+  const handleOpen = () => {
+    setShowModal(true)
+  }
   return (
     <Fragment>
+      <Modal show={showModal} onHide={handleClose} centered size="xs">
+        <Modal.Header closeButton>
+          <Modal.Title>微信二维码</Modal.Title>
+        </Modal.Header>
+        <Modal.Body className="center-align">
+          <img width="200" src={require("../images/qrcode.jpg")} />
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+        </Modal.Footer>
+      </Modal>
       <Container fluid className="px-0 main">
-        <Navbar pageInfo={pageInfo} />
+        <Navbar handleOpen={handleOpen} pageInfo={pageInfo} />
         <Row noGutters>
           <Col>
             <main>{children}</main>
@@ -54,9 +75,13 @@ const Layout = ({ children, pageInfo }) => {
               <div className="footer-content">
                 <h5>联系我们</h5>
                 <p>
-                  邮件: info@guaranti.ca<br></br>
-                  电话: +1 (778) 297 7450 <br></br>
-                  地址: #205 - 6011 Westminster<br></br>Hwy, Richmond, BC
+                  <b>邮件:</b>{" "}
+                  <a href="mailto:info@guaranti.ca">info@guaranti.ca</a>
+                  <br></br>
+                  <b>电话:</b>{" "}
+                  <a href="tel:+1 (778) 297 7450">+1 (778) 297 7450</a>{" "}
+                  <br></br>
+                  <b>地址:</b> #205 - 6011 Westminster<br></br>Hwy, Richmond, BC
                 </p>
               </div>
             </Col>
@@ -83,16 +108,32 @@ const Layout = ({ children, pageInfo }) => {
             </Col>
             <Col lg="3" md="12">
               <div className="social-media">
-                <a href="#" target="_blank">
+                <a
+                  href="https://www.linkedin.com/company/guaranti-mortgages/?viewAsMember=true"
+                  target="_blank"
+                >
                   <FaLinkedinIn size="22px"></FaLinkedinIn>
                 </a>
-                <a href="#" target="_blank">
+                <a
+                  href="https://www.facebook.com/GuarantiGroup/?eid=ARBWHHonkTPnUxYBTqLi-qA3C2Kl8mVj1OmohJf4IH-K6OWqyokoJeGuwIdrZbesUShVbKjgEQel7Kvd"
+                  target="_blank"
+                >
                   <FaFacebookF size="22px"></FaFacebookF>
                 </a>
-                <a href="#" target="_blank">
+                <a
+                  href="#"
+                  target="_blank"
+                  onClick={e => {
+                    e.preventDefault()
+                    handleOpen()
+                  }}
+                >
                   <AiFillWechat size="22px"></AiFillWechat>
                 </a>
-                <a href="#" target="_blank">
+                <a
+                  href="https://www.instagram.com/guarantigroup/"
+                  target="_blank"
+                >
                   <AiFillInstagram size="22px"></AiFillInstagram>
                 </a>
               </div>

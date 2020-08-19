@@ -74,13 +74,19 @@ const Services = () => {
   return (
     <Layout pageInfo={{ pageName: "index" }}>
       {/* Modal */}
-      <div
-        className="floater"
-      >
-        <p style={{
-            marginBottom: 0
-        }}>
-          邮件: info@guaranti.ca <br></br>电话: +1 (778) 297 7450
+      <div className="floater">
+        <p
+          style={{
+            marginBottom: 0,
+          }}
+        >
+          <b>邮件:</b> <a href="mailto:info@guaranti.ca">info@guaranti.ca</a>
+          <br></br>
+          <b>电话:</b> <a href="tel:+1 (778) 297 7450">+1 (778) 297 7450</a>{" "}
+          <br></br>
+          <div className="img-wrapper">
+            <img width="120" src={require("../../images/qrcode.jpg")} />
+          </div>
         </p>
       </div>
       <Container className="mt-5 loan-services">

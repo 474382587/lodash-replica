@@ -15,29 +15,10 @@ import {
 
 import "./navBar.scss"
 
-const CustomNavbar = ({ pageInfo }) => {
-    
-    const [showModal, setShowModal] = useState(false)
-    const handleClose = () => {
-        setShowModal(false)
-    }
-    const handleOpen = () => {
-        setShowModal(true)
-    }
+const CustomNavbar = ({ pageInfo, handleOpen }) => {
   console.log(pageInfo)
   return (
     <Fragment>
-      <Modal show={showModal} onHide={handleClose} centered size="xs">
-        <Modal.Header closeButton>
-          <Modal.Title>微信二维码</Modal.Title>
-        </Modal.Header>
-        <Modal.Body className="center-align"><img width="200" src={require('../images/qrcode.jpg')}/></Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-        </Modal.Footer>
-      </Modal>
       <Navbar variant="dark" expand="lg" id="site-navbar">
         {/* <Container> */}
 
@@ -116,12 +97,14 @@ const CustomNavbar = ({ pageInfo }) => {
               >
                 <FaFacebookF size="22px"></FaFacebookF>
               </a>
-              <a href="#" target="_blank" onClick={
-                e => {
-                    e.preventDefault()
-                    handleOpen()
-                }
-              }>
+              <a
+                href="#"
+                target="_blank"
+                onClick={e => {
+                  e.preventDefault()
+                  handleOpen()
+                }}
+              >
                 <AiFillWechat size="22px"></AiFillWechat>
               </a>
               <a
