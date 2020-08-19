@@ -31,9 +31,17 @@ const Service = () => {
       <Container className="service-container">
         <h1>建筑贷款</h1>
         <div className="html-content"></div>
-         <Row className="nav-links">
+        <h3>相关资讯</h3>
+        <Row className="nav-links">
           <Col md="6" sm="6" xs="6" style={{ fontSize: 32 }}>
-            <Link to="/loan/business">◀ 商业贷款 </Link>
+            <Link to="/loan/business">
+              <div className="content-container">
+                <div className="image-container">
+                  <img width="100%" src={require("../../../images/1.jpg")} />
+                </div>
+                <div className="sub-title">商业贷款</div>
+              </div>
+            </Link>
           </Col>
           <Col
             md="6"
@@ -41,7 +49,14 @@ const Service = () => {
             xs="6"
             style={{ textAlign: "right", fontSize: 32 }}
           >
-            <a href={post.url ? post.url : "#"}>博客 ▶</a>
+            <a href={post.url ? post.url : "#"}>
+              <div className="content-container">
+                <div className="image-container">
+                  <img width="100%" src={require("../../../images/2.jpg")} />
+                </div>
+                <div className="sub-title">推荐博客</div>
+              </div>
+            </a>
           </Col>
         </Row>
       </Container>

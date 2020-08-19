@@ -109,8 +109,22 @@ a.ml {
 }
 
 .service-container {
+  h3 {
+    font-size: 36px;
+    text-align: center;
+    font-weight: bold;
+  }
+  .content-container {
+    width: 90%;
+    margin: 0 auto;
+  }
   .nav-links {
     margin-top: 50px;
+  }
+  .sub-title {
+    background-color: #e8c467;
+    padding: 20px;
+    font-size: 24px;
   }
   a {
     color: #000;
@@ -119,6 +133,7 @@ a.ml {
     }
   }
   h1 {
+    font-weight: bold;
     text-align: center;
     margin: 50px auto;
   }
