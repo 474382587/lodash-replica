@@ -104,7 +104,7 @@ const Plan = () => {
           Shape your future web project with sharp design and refine coded
           functions.
         </h3>
-        <h4 className="mt-5">理财策略</h4>
+        <h4 className="mt-5">投资方案</h4>
         <Row>
           {services.map((item, index) => {
             return (

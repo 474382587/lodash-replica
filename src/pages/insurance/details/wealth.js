@@ -8,7 +8,7 @@ import { Link } from "gatsby"
 const Contentful = require("contentful")
 const Service = () => {
   const [post, setPost] = useState({})
-  const id = "4rIaQDUDgJYnT2KTPvq7gA"
+  const id = "60HGv8KTuCVQBU813C7Bqv"
   useEffect(() => {
     const client = Contentful.createClient({
       space: "xxnh1wfwedpb",
@@ -29,18 +29,18 @@ const Service = () => {
   return (
     <Layout>
       <Container className="service-container">
-        <h1>政府福利</h1>
+        <h1>财富传承</h1>
         <div className="html-content"></div>
 
         <h3>相关资讯</h3>
         <Row className="nav-links">
           <Col md="6" sm="6" xs="6" style={{ fontSize: 32 }}>
-            <Link to="/fortune/strategy">
+            <Link to="/insurance/strategy">
               <div className="content-container">
                 <div className="image-container">
                   <img width="100%" src={require("../../../images/1.jpg")} />
                 </div>
-                <div className="sub-title">理财策略</div>
+                <div className="sub-title">个人保险</div>
               </div>
             </Link>
           </Col>
