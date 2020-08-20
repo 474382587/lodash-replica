@@ -28,7 +28,7 @@ const IndexPage = () => {
       slidesToShow = 1
     }
   }
-
+  const [cases, setCases] = useState([])
   const [banners, setBanners] = useState([])
   const client = Contentful.createClient({
     space: "xxnh1wfwedpb",
@@ -49,6 +49,32 @@ const IndexPage = () => {
           console.log("hahahaha")
           console.log(res)
         }
+      })
+
+    client
+      .getEntries({
+        content_type: "postChinese",
+      })
+      .then(function(entries) {
+        console.dir(entries)
+        let res = []
+        if (entries.items.length > 0) {
+          res = entries.items
+            .filter(e => e.fields.tags.includes("home"))
+            .map(e => ({
+              ...e.fields,
+              image: e.fields.image.fields.file.url,
+              date: new Date(e.sys.createdAt).toDateString(),
+              id: e.sys.id,
+            }))
+          setCases(res)
+        }
+        // log the title for all the entries that have it
+        entries.items.forEach(function(entry) {
+          if (entry.fields.productName) {
+            console.log(entry.fields.productName)
+          }
+        })
       })
   }, [])
   console.log(123)
@@ -211,28 +237,25 @@ const IndexPage = () => {
 
         <Container className="margin-top80">
           <Row>
-            <Col md="6" sm="12">
-              <Card style={{ width: "100%" }}>
-                <Card.Img variant="top" src={require("../images/loan.jpeg")} />
-                <Card.Body>
-                  <Card.Title>贷款按揭</Card.Title>
-                  <Card.Text>
-                    温顶贷款拥有加拿大华人第一贷款团队，为客户提供各大银行最优利率、专业团队一站式服务。
-                  </Card.Text>
-                </Card.Body>
-              </Card>
-            </Col>
-            <Col md="6" sm="12">
-              <Card style={{ width: "100%" }}>
-                <Card.Img variant="top" src={require("../images/loan.jpeg")} />
-                <Card.Body>
-                  <Card.Title>贷款按揭</Card.Title>
-                  <Card.Text>
-                    温顶贷款拥有加拿大华人第一贷款团队，为客户提供各大银行最优利率、专业团队一站式服务。
-                  </Card.Text>
-                </Card.Body>
-              </Card>
-            </Col>
+            {cases.map((post, index) => {
+              if (index > 1) {
+                return ""
+              } else {
+                return (
+                  <Col md="6" sm="12">
+                    <Link to={'/post/?id=' + post.id}>
+                      <Card style={{ width: "100%" }}>
+                        <Card.Img variant="top" src={post.image} />
+                        <Card.Body>
+                          <Card.Title>{post.title}</Card.Title>
+                          <Card.Text>{post.excerpt}</Card.Text>
+                        </Card.Body>
+                      </Card>
+                    </Link>
+                  </Col>
+                )
+              }
+            })}
           </Row>
           <Row
             style={{
