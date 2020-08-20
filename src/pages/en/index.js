@@ -13,11 +13,12 @@ import {
 import { Carousel as AndtCarousel } from "antd"
 
 import Layout from "../../components/layout"
-// import SEO from "../../components/seo"
+import SEO from "../../components/seo"
 import "./index.scss"
+import { Link } from "gatsby"
 
 const Contentful = require("contentful")
-const IndexPage = props => {
+const IndexPage = () => {
   let slidesToShow = 4
 
   if (typeof window !== `undefined`) {
@@ -30,13 +31,13 @@ const IndexPage = props => {
 
   const [banners, setBanners] = useState([])
   const client = Contentful.createClient({
-    space: "1u2l88u90bu7",
-    accessToken: "Hoh3zn4V3KzIt9pD8qf7bHA1mqqVr6Tzq036L9UsdL0",
+    space: "xxnh1wfwedpb",
+    accessToken: "2tDLrcvmKpzOorRWsHgbwHodpFLzUHExcvtLrVw9w2E",
   })
   useEffect(() => {
     client
       .getEntries({
-        content_type: "homePageBanners",
+        content_type: "homePageBannersChinese",
       })
       .then(function(entries) {
         // log the title for all the entries that have it
@@ -87,14 +88,14 @@ const IndexPage = props => {
                 <Carousel.Item>
               <img
                 className="d-block w-100"
-                src={require("../images/1.png")}
+                src={require("../../images/1.png")}
                 alt="Third slide"
               />
             </Carousel.Item>
             <Carousel.Item>
               <img
                 className="d-block w-100"
-                src={require("../images/3.png")}
+                src={require("../../images/3.png")}
                 alt="Third slide"
               />
             </Carousel.Item>
@@ -107,32 +108,30 @@ const IndexPage = props => {
           <Row>
             <Col sm="12" md="4">
               <Card style={{ width: "100%" }}>
-                <Card.Img
-                  variant="top"
-                  src={require("../../images/loan.jpeg")}
-                />
+                <Card.Img variant="top" src={require("../../images/loan.jpeg")} />
                 <Card.Body>
                   <Card.Title>贷款按揭</Card.Title>
                   <Card.Text>
                     温顶贷款拥有加拿大华人第一贷款团队，为客户提供各大银行最优利率、专业团队一站式服务。
                   </Card.Text>
-                  <Button variant="primary">了解更多</Button>
+                  <Link className="btn btn-primary" to="/loan/services">
+                    了解更多
+                  </Link>
                 </Card.Body>
               </Card>
             </Col>
             <Col sm="12" md="4">
               <Card style={{ width: "100%" }}>
-                <Card.Img
-                  variant="top"
-                  src={require("../../images/plan.jpeg")}
-                />
+                <Card.Img variant="top" src={require("../../images/plan.jpeg")} />
                 <Card.Body>
                   <Card.Title>财税规划</Card.Title>
                   <Card.Text>
                     Some quick example text to build on the card title and make
                     up the bulk of the card's content.
                   </Card.Text>
-                  <Button variant="primary">了解更多</Button>
+                  <Link className="btn btn-primary" to="/fortune/corporate">
+                    了解更多
+                  </Link>
                 </Card.Body>
               </Card>
             </Col>
@@ -148,7 +147,9 @@ const IndexPage = props => {
                     Some quick example text to build on the card title and make
                     up the bulk of the card's content.
                   </Card.Text>
-                  <Button variant="primary">了解更多</Button>
+                  <Link className="btn btn-primary" to="/insurance/corporate">
+                    了解更多
+                  </Link>
                 </Card.Body>
               </Card>
             </Col>
@@ -212,10 +213,7 @@ const IndexPage = props => {
           <Row>
             <Col md="6" sm="12">
               <Card style={{ width: "100%" }}>
-                <Card.Img
-                  variant="top"
-                  src={require("../../images/loan.jpeg")}
-                />
+                <Card.Img variant="top" src={require("../../images/loan.jpeg")} />
                 <Card.Body>
                   <Card.Title>贷款按揭</Card.Title>
                   <Card.Text>
@@ -226,10 +224,7 @@ const IndexPage = props => {
             </Col>
             <Col md="6" sm="12">
               <Card style={{ width: "100%" }}>
-                <Card.Img
-                  variant="top"
-                  src={require("../../images/loan.jpeg")}
-                />
+                <Card.Img variant="top" src={require("../../images/loan.jpeg")} />
                 <Card.Body>
                   <Card.Title>贷款按揭</Card.Title>
                   <Card.Text>
@@ -245,7 +240,7 @@ const IndexPage = props => {
             }}
           >
             <Col md="6" sm="6" xs="6" style={{ fontSize: 32 }}>
-              关于温顶
+              <Link to="/about">◀ 关于温顶</Link>
             </Col>
             <Col
               md="6"
@@ -253,66 +248,7 @@ const IndexPage = props => {
               xs="6"
               style={{ textAlign: "right", fontSize: 32 }}
             >
-              新闻资讯
-            </Col>
-          </Row>
-        </Container>
-
-        <Container className="margin-top80 text-center">
-          <Row>
-            <Col>
-              <p>
-                This is a Gatsby Starter that I frequently use to get jump
-                started on quick website builds. It includes the following
-                packages:
-              </p>
-            </Col>
-          </Row>
-          <Row className="justify-content-center my-3">
-            <Col md="6">
-              <ListGroup>
-                <ListGroup.Item
-                  action
-                  href="https://getbootstrap.com"
-                  target="_blank"
-                >
-                  Bootstrap
-                </ListGroup.Item>
-                <ListGroup.Item
-                  action
-                  href="https://react-bootstrap.github.io/"
-                  target="_blank"
-                >
-                  react-bootstrap
-                </ListGroup.Item>
-                <ListGroup.Item
-                  action
-                  href="https://react-icons.netlify.com"
-                  target="_blank"
-                >
-                  react-icons
-                </ListGroup.Item>
-                <ListGroup.Item
-                  action
-                  href="https://www.gatsbyjs.org/packages/gatsby-plugin-sass/"
-                  target="_blank"
-                >
-                  gatsby-plugin-sass
-                </ListGroup.Item>
-              </ListGroup>
-            </Col>
-          </Row>
-          <Row>
-            <Col>
-              <p>
-                This starter also includes a navbar that sticks to the top of
-                the screen when the user scrolls past it, and a footer that
-                stays at the bottom of the screen.
-              </p>
-              <p>
-                For more documentation on these packages and how they work,
-                please refer to the pages linked in the list above.
-              </p>
+              <Link to="/join">加入我们 ▶</Link>
             </Col>
           </Row>
         </Container>
