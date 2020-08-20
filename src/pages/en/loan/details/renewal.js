@@ -6,7 +6,7 @@ import { documentToHtmlString } from "@contentful/rich-text-html-renderer"
 // import "./services.scss"
 import { Link } from "gatsby"
 const Contentful = require("contentful")
-const Service = () => {
+const Renewal = () => {
   const [post, setPost] = useState({})
   const id = "4qLwcV0jZ1sPlsw1m3STSB"
   useEffect(() => {
@@ -66,4 +66,4 @@ const Service = () => {
   )
 }
 
-export default Service
+export default Renewal
