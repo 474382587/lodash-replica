@@ -19,22 +19,22 @@ import "./navBar.scss"
 const CustomNavbar = ({ pageInfo, handleOpen }) => {
   const [url, setUrl] = useState("/")
   useEffect(() => {
-    if (typeof window !== undefined) {
+    if (typeof window !== "undefined") {
       const { pathname } = window.location
       if (pathname.includes("/en/")) {
         setUrl(pathname.replace("/en/", "/"))
         if (pathname.includes("/post/")) {
-            setUrl('/news')
+          setUrl("/news")
         }
       } else {
         setUrl("/en".concat(pathname))
         if (pathname.includes("/post/")) {
-            setUrl('/en/news')
+          setUrl("/en/news")
         }
       }
     }
   }, [])
-  if (typeof window !== undefined) {
+  if (typeof window !== "undefined") {
     const { pathname } = window.location
     console.log(pathname)
     if (pathname.includes("/en/")) {
