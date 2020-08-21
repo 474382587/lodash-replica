@@ -84,7 +84,7 @@ const Join = () => {
             xs="6"
             style={{ textAlign: "right", fontSize: 32 }}
           >
-            <Link to="/team"> 团队成员 ▶</Link>
+            <Link to="/team"> 团队成员▶</Link>
           </Col>
         </Row>
       </Container>

@@ -213,7 +213,7 @@ const Detail = () => {
             xs="6"
             style={{ textAlign: "right", fontSize: 32 }}
           >
-          <a href="http://sv.mikecrm.com/JcYy9jm" target="_blank">申请贷款  ▶</a>
+          <a href="http://sv.mikecrm.com/JcYy9jm" target="_blank">申请贷款 ▶</a>
           </Col>
         </Row>
       </Container>

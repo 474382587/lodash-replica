@@ -240,7 +240,7 @@ const IndexPage = () => {
             }}
           >
             <Col md="6" sm="6" xs="6" style={{ fontSize: 32 }}>
-              <Link to="/about">◀ 关于温顶</Link>
+              <Link to="/about">◀关于温顶</Link>
             </Col>
             <Col
               md="6"
@@ -248,7 +248,7 @@ const IndexPage = () => {
               xs="6"
               style={{ textAlign: "right", fontSize: 32 }}
             >
-              <Link to="/join">加入我们 ▶</Link>
+              <Link to="/join">加入我们▶</Link>
             </Col>
           </Row>
         </Container>

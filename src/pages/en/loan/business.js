@@ -173,7 +173,7 @@ const Business = () => {
           }}
         >
           <Col md="6" sm="6" xs="6" style={{ fontSize: 32 }}>
-            <Link to="/loan/services">◀ 住房贷款</Link>
+            <Link to="/loan/services">◀住房贷款</Link>
           </Col>
           <Col
             md="6"
@@ -182,7 +182,7 @@ const Business = () => {
             style={{ textAlign: "right", fontSize: 32 }}
           >
             <a href="http://sv.mikecrm.com/JcYy9jm" target="_blank">
-              申请贷款 ▶
+              申请贷款▶
             </a>
           </Col>
         </Row>

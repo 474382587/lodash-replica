@@ -104,7 +104,7 @@ const About = () => {
           }}
         >
           <Col md="6" sm="6" xs="6" style={{ fontSize: 32 }}>
-            <Link to="/join">◀ 加入我们</Link>
+            <Link to="/join">◀加入我们</Link>
           </Col>
           <Col
             md="6"
@@ -112,7 +112,7 @@ const About = () => {
             xs="6"
             style={{ textAlign: "right", fontSize: 32 }}
           >
-            <Link to="/team">团队成员 ▶</Link>
+            <Link to="/team">团队成员▶</Link>
             
           </Col>
         </Row>

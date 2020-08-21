@@ -184,7 +184,7 @@ const Corporate = () => {
           }}
         >
           <Col md="6" sm="6" xs="6" style={{ fontSize: 32 }}>
-            <Link to="/fortune/strategy">◀ 理财策略</Link>
+            <Link to="/fortune/strategy">◀理财策略</Link>
           </Col>
           <Col
             md="6"
@@ -192,7 +192,7 @@ const Corporate = () => {
             xs="6"
             style={{ textAlign: "right", fontSize: 32 }}
           >
-            <Link to="/fortune/plan">投资方案 ▶</Link>
+            <Link to="/fortune/plan">投资方案▶</Link>
           </Col>
         </Row>
       </Container>

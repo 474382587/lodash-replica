@@ -138,7 +138,7 @@ const Strategy = () => {
           }}
         >
           <Col md="6" sm="6" xs="6" style={{ fontSize: 32 }}>
-            <Link to="/insurance/corporate">◀ 企业保险</Link>
+            <Link to="/insurance/corporate">◀企业保险</Link>
           </Col>
           <Col
             md="6"
@@ -146,7 +146,7 @@ const Strategy = () => {
             xs="6"
             style={{ textAlign: "right", fontSize: 32 }}
           >
-            <Link to="/insurance/asset">财产保险 ▶</Link>
+            <Link to="/insurance/asset">财产保险▶</Link>
           </Col>
         </Row>
       </Container>
