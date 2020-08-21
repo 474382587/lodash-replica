@@ -105,6 +105,7 @@ const Services = () => {
     <Layout pageInfo={{ pageName: "index" }}>
       {/* Modal */}
       <div className="floater">
+        <h3>联系我们</h3>
         <p
           style={{
             marginBottom: 0,
@@ -120,137 +121,165 @@ const Services = () => {
         </p>
       </div>
       <Container className="mt-5 loan-services">
-        <h1
-          style={{
-            textAlign: "center",
-          }}
-        >
-          温顶贷款-为你带来希望
-        </h1>
-        <h3>
-          温顶贷款拥有一站式咨询和申请服务，为您选择最符合客户财务现状的贷款方案。我们的全国顶尖贷款团队为您提供包括但不限于
-          —— 住房贷款、建筑贷款、商业贷款及投资理财。在创始人许家齐（Elvis
-          Hui）的带领下，已经成为整个加拿大华人群体的贷款领军人物。凭借对房屋贷款多年的专业经验和认识，根据客户各种不同情况，温顶贷款可以高效迅速地从众多金融产品中为客户选择出最适合他们的贷款方案。
-        </h3>
-        <h4 className="mt-5">住房贷款</h4>
-        <Row>
-          {services.map((item, index) => {
-            return (
-              <Col md="4" sm="12" key={index}>
-                <Card style={{ width: "100%" }}>
-                  <Card.Img variant="top" src={require("../../images/1.jpg")} />
-                  <Card.Body>
-                    <Card.Title>{item.title}</Card.Title>
-                    {/**<Button
+        <section>
+          <h1
+            style={{
+              textAlign: "center",
+            }}
+          >
+            温顶贷款-为你带来希望
+          </h1>
+          <h3>
+            温顶贷款拥有一站式咨询和申请服务，为您选择最符合客户财务现状的贷款方案。我们的全国顶尖贷款团队为您提供包括但不限于
+            —— 住房贷款、建筑贷款、商业贷款及投资理财。在创始人许家齐（Elvis
+            Hui）的带领下，已经成为整个加拿大华人群体的贷款领军人物。凭借对房屋贷款多年的专业经验和认识，根据客户各种不同情况，温顶贷款可以高效迅速地从众多金融产品中为客户选择出最适合他们的贷款方案。
+          </h3>
+        </section>
+        <section>
+          <h4 className="mt-5">住房贷款</h4>
+          <Row>
+            {services.map((item, index) => {
+              return (
+                <Col md="4" sm="12" key={index}>
+                  <Card style={{ width: "100%" }}>
+                    <Card.Img
+                      variant="top"
+                      src={require("../../images/1.jpg")}
+                    />
+                    <Card.Body>
+                      <Card.Title>{item.title}</Card.Title>
+                      {/**<Button
                       variant="primary"
                       onClick={() => {
                         handleOpen(item.title, item.content)
                       }}
                     ></Button> */}
-                    <Link className="btn btn-primary" to={item.slug}>
-                      了解更多
-                    </Link>
-                  </Card.Body>
-                </Card>
-              </Col>
-            )
-          })}
-        </Row>
-
-        <h4 className="mt-5">代理VS银行</h4>
-        <Row>
-          <Col>
-            <video width="100%" controls name="media">
-              <source
-                src="https://elvishui.com/wp-content/uploads/2018/01/Broker-VS-Bank-final%EF%BC%89.mp4?_=1&loop=0&autoplay=0"
-                type="video/mp4"
-              />
-            </video>
-          </Col>
-        </Row>
-
-        <h4 className="mt-5">合作机构</h4>
-        <h3>
-          温顶贷款和多家大小银行和金融机构保持长期合作关系，能够为客户提供数百个金融产品的选择。
-          作为专业且富有丰富经验的贷款经纪公司，我们会根据客户的不同情况，在众多产品中为客户选择最适合他们的贷款方案。丰富的贷款方案满足您的独特需求。
-        </h3>
-        <Row>
-          <Col md="4" sm="12">
-            <h5>甲级银行/甲级金融机构</h5>
-            <p>适合一般新移民，或海外居民，或是信用好收入高的客户</p>
-          </Col>
-          <Col md="4" sm="12">
-            <h5>乙级银行/乙级金融机构</h5>
-            <p>适合信用分数比较低，或自雇人士，或是以现金收入为主的客户</p>
-          </Col>
-          <Col md="4" sm="12">
-            <h5>私人贷款机构</h5>
-            <p>
-              适合二次贷款，或三次贷款，或无收入证明，或需要特快批下贷款的客户
-            </p>
-          </Col>
-        </Row>
-
-        <div className="ant-carousel">
-          <AndtCarousel
-            autoplay={true}
-            slidesToShow={slidesToShow}
-            autoplaySpeed={2000}
-            arrows={true}
-            dots={false}
-            arrows
-          >
-            <div className="image-container">
-              <img width="100%" src={require("../../images/partners/1.png")} />
-            </div>
-            <div className="image-container">
-              <img width="100%" src={require("../../images/partners/2.png")} />
-            </div>
-            <div className="image-container">
-              <img width="100%" src={require("../../images/partners/3.png")} />
-            </div>
-            <div className="image-container">
-              <img width="100%" src={require("../../images/partners/4.png")} />
-            </div>
-            <div className="image-container">
-              <img width="100%" src={require("../../images/partners/5.png")} />
-            </div>
-            <div className="image-container">
-              <img width="100%" src={require("../../images/partners/6.png")} />
-            </div>
-          </AndtCarousel>
-        </div>
-
-        {post ? (
-          <Row className="flexie">
-            <Col md="4" sm="12">
-              <div className="image-container">
-                <img width="100%" src={post.image} />
-              </div>
+                      <Link className="btn btn-primary" to={item.slug}>
+                        了解更多
+                      </Link>
+                    </Card.Body>
+                  </Card>
+                </Col>
+              )
+            })}
+          </Row>
+        </section>
+        <section>
+          <h4 className="mt-5">代理VS银行</h4>
+          <Row>
+            <Col>
+              <video width="100%" controls name="media">
+                <source
+                  src="https://elvishui.com/wp-content/uploads/2018/01/Broker-VS-Bank-final%EF%BC%89.mp4?_=1&loop=0&autoplay=0"
+                  type="video/mp4"
+                />
+              </video>
             </Col>
-            <Col md="8" sm="12">
-              {/** <h6>最新成功案例</h6> */}
-              <h5>{post.title}</h5>
+          </Row>
+        </section>
+
+        <section>
+          <h4 className="mt-5">合作机构</h4>
+          <h3>
+            温顶贷款和多家大小银行和金融机构保持长期合作关系，能够为客户提供数百个金融产品的选择。
+            作为专业且富有丰富经验的贷款经纪公司，我们会根据客户的不同情况，在众多产品中为客户选择最适合他们的贷款方案。丰富的贷款方案满足您的独特需求。
+          </h3>
+          <Row>
+            <Col md="4" sm="12">
+              <h5>甲级银行/甲级金融机构</h5>
+              <p>适合一般新移民，或海外居民，或是信用好收入高的客户</p>
+            </Col>
+            <Col md="4" sm="12">
+              <h5>乙级银行/乙级金融机构</h5>
+              <p>适合信用分数比较低，或自雇人士，或是以现金收入为主的客户</p>
+            </Col>
+            <Col md="4" sm="12">
+              <h5>私人贷款机构</h5>
               <p>
-                {post.excerpt} - 
-                <Link
-                  to={'/post/?id=' + post.id}
-                >
-                  查看更多
-                </Link>
+                适合二次贷款，或三次贷款，或无收入证明，或需要特快批下贷款的客户
               </p>
             </Col>
           </Row>
-        ) : (
-          ""
-        )}
+
+          <div className="ant-carousel">
+            <AndtCarousel
+              autoplay={true}
+              slidesToShow={slidesToShow}
+              autoplaySpeed={2000}
+              arrows={true}
+              dots={false}
+              arrows
+            >
+              <div className="image-container">
+                <img
+                  width="100%"
+                  src={require("../../images/partners/1.png")}
+                />
+              </div>
+              <div className="image-container">
+                <img
+                  width="100%"
+                  src={require("../../images/partners/2.png")}
+                />
+              </div>
+              <div className="image-container">
+                <img
+                  width="100%"
+                  src={require("../../images/partners/3.png")}
+                />
+              </div>
+              <div className="image-container">
+                <img
+                  width="100%"
+                  src={require("../../images/partners/4.png")}
+                />
+              </div>
+              <div className="image-container">
+                <img
+                  width="100%"
+                  src={require("../../images/partners/5.png")}
+                />
+              </div>
+              <div className="image-container">
+                <img
+                  width="100%"
+                  src={require("../../images/partners/6.png")}
+                />
+              </div>
+            </AndtCarousel>
+          </div>
+        </section>
+
+        <section>
+          <h4 className="mt-5">成功案例</h4>
+          {post ? (
+            <Row className="flexie">
+              <Col md="4" sm="12">
+                <div className="image-container">
+                  <img width="100%" src={post.image} />
+                </div>
+              </Col>
+              <Col md="8" sm="12">
+                {/** <h6>最新成功案例</h6> */}
+                <h5>{post.title}</h5>
+                <p>
+                  {post.excerpt} -
+                  <Link to={"/post/?id=" + post.id}>查看更多</Link>
+                </p>
+              </Col>
+            </Row>
+          ) : (
+            ""
+          )}
+        </section>
+
         <Row
           style={{
             marginTop: 30,
           }}
         >
           <Col md="6" sm="6" xs="6" style={{ fontSize: 32 }}>
-            <Link to="/loan/business">◀ 其他贷款</Link>
+            <Link to="/loan/business">◀ 商业贷款</Link>
           </Col>
           <Col
             md="6"

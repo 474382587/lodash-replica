@@ -39,7 +39,10 @@ div.full-height {
 
 .social-media {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  a {
+    margin: 0 18px;
+  }
   svg {
     fill: #969696;
   }

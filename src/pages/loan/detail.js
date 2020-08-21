@@ -205,7 +205,7 @@ const Detail = () => {
           }}
         >
           <Col md="6" sm="6" xs="6" style={{ fontSize: 32 }}>
-            其他贷款
+            商业贷款
           </Col>
           <Col
             md="6"

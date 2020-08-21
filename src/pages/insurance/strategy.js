@@ -77,6 +77,7 @@ const Strategy = () => {
     <Layout pageInfo={{ pageName: "index" }}>
       {/* Modal */}
       <div className="floater">
+        <h3>联系我们</h3>
         <p
           style={{
             marginBottom: 0,
@@ -87,41 +88,50 @@ const Strategy = () => {
           <b>电话:</b> <a href="tel:+1 (778) 297 7450">+1 (778) 297 7450</a>{" "}
           <br></br>
           <div className="img-wrapper">
-            <img width="120" src={require("../../images/baoxian-caishui.jpg")} />
+            <img
+              width="120"
+              src={require("../../images/baoxian-caishui.jpg")}
+            />
           </div>
         </p>
       </div>
       <Container className="mt-5 strategy-services">
-        <h1
-          style={{
-            textAlign: "center",
-          }}
-        >
-          温顶保险-为您保驾护航
-        </h1>
-        <h3>
-          Shape your future web project with sharp design and refine coded
-          functions.
-        </h3>
-        <h4 className="mt-5">个人保险</h4>
-        <Row>
-          {services.map((item, index) => {
-            return (
-              <Col md="4" sm="12" key={index}>
-                <Card style={{ width: "100%" }}>
-                  <Card.Img variant="top" src={require("../../images/1.png")} />
-                  <Card.Body>
-                    <Card.Title>{item.title}</Card.Title>
-                    <Link className="btn btn-primary" to={item.slug}>
-                      了解更多
-                    </Link>
-                  </Card.Body>
-                </Card>
-              </Col>
-            )
-          })}
-        </Row>
-
+        <section>
+          <h1
+            style={{
+              textAlign: "center",
+            }}
+          >
+            温顶保险-为您保驾护航
+          </h1>
+          <h3>
+            Shape your future web project with sharp design and refine coded
+            functions.
+          </h3>
+        </section>
+        <section>
+          <h4 className="mt-5">个人保险</h4>
+          <Row>
+            {services.map((item, index) => {
+              return (
+                <Col md="4" sm="12" key={index}>
+                  <Card style={{ width: "100%" }}>
+                    <Card.Img
+                      variant="top"
+                      src={require("../../images/1.png")}
+                    />
+                    <Card.Body>
+                      <Card.Title>{item.title}</Card.Title>
+                      <Link className="btn btn-primary" to={item.slug}>
+                        了解更多
+                      </Link>
+                    </Card.Body>
+                  </Card>
+                </Col>
+              )
+            })}
+          </Row>
+        </section>
         <Row
           style={{
             marginTop: 30,

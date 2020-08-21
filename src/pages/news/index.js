@@ -29,7 +29,7 @@ const News = ({ navigate }) => {
           res = entries.items.map(e => ({
             ...e.fields,
             image: e.fields.image.fields.file.url,
-            date: new Date(e.sys.createdAt).toDateString(),
+            // date: new Date(e.sys.createdAt).toDateString(),
             id: e.sys.id,
           }))
           console.log(res)
@@ -101,31 +101,20 @@ const News = ({ navigate }) => {
             onClick={e => {
               clearActiveFilter()
               e.target.classList.add("active")
-              applyFilter("news")
+              applyFilter("residential")
             }}
           >
-            最新资讯
+            住房贷款
           </Button>
           <Button
             variant="primary"
             onClick={e => {
               clearActiveFilter()
               e.target.classList.add("active")
-              applyFilter("featured")
+              applyFilter("commercial")
             }}
           >
-            精彩篇章
-          </Button>
-          <Button
-            variant="primary"
-            onClick={e => {
-              clearActiveFilter()
-              e.target.classList.add("active")
-
-              applyFilter("seminar")
-            }}
-          >
-            讲座教程
+            商业贷款
           </Button>
           <Button
             variant="primary"
@@ -133,10 +122,43 @@ const News = ({ navigate }) => {
               clearActiveFilter()
               e.target.classList.add("active")
 
-              applyFilter("faq")
+              applyFilter("financial")
             }}
           >
-            咨询问答
+            理财投资
+          </Button>
+          <Button
+            variant="primary"
+            onClick={e => {
+              clearActiveFilter()
+              e.target.classList.add("active")
+
+              applyFilter("insurance")
+            }}
+          >
+            保险服务
+          </Button>
+          <Button
+            variant="primary"
+            onClick={e => {
+              clearActiveFilter()
+              e.target.classList.add("active")
+
+              applyFilter("insights")
+            }}
+          >
+            温顶视野
+          </Button>
+          <Button
+            variant="primary"
+            onClick={e => {
+              clearActiveFilter()
+              e.target.classList.add("active")
+
+              applyFilter("culture")
+            }}
+          >
+            企业文化
           </Button>
         </div>
 

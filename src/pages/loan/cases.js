@@ -53,6 +53,7 @@ const Cases = () => {
   return (
     <Layout>
       <Container className="cases-services">
+      <section>
         <h1 className="mt-5" style={{ textAlign: "center" }}>
           成功案例
         </h1>
@@ -62,6 +63,7 @@ const Cases = () => {
           Website Builder creates responsive, retina and mobile friendly
           websites in a few clicks.
         </h3>
+     
         <Row className="mt-5">
           {cases.map(e => (
             <Col md="4" sm="12" key={e.id}>
@@ -78,6 +80,7 @@ const Cases = () => {
             </Col>
           ))}
         </Row>
+        </section>
         <Row
           style={{
             marginTop: 30,

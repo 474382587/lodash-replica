@@ -16,7 +16,7 @@
         font-size: 24px;
       }
       p {
-        font-size: 19px;
+        font-size: 18px;
       }
     }
     .right {
@@ -34,6 +34,9 @@
     cursor: pointer;
     transition: color 0.3s;
     -webkit-text-decoration-skip: objects;
+    &:hover {
+        color: #969696;
+    }
   }
   .details {
     display: none;
@@ -70,7 +73,7 @@
     }
   }
   h4 {
-    font-size: 19px;
+    font-size: 18px;
     font-weight: bold;
   }
   .center-align {
@@ -80,7 +83,7 @@
     text-align: left;
     p {
       margin-top: 20px;
-      font-size: 19px;
+      font-size: 18px;
       font-weight: 500;
       color: #767676;
     }
@@ -104,7 +107,7 @@
       font-weight: bold;
     }
     p {
-      font-size: 24px;
+      font-size: 20px;
     }
   }
   .ant-carousel {

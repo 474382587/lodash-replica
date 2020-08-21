@@ -64,7 +64,7 @@ const Strategy = () => {
   return (
     <Layout pageInfo={{ pageName: "index" }}>
       {/* Modal */}
-      <div className="floater">
+      <div className="floater"><h3>联系我们</h3>
         <p
           style={{
             marginBottom: 0,
@@ -116,7 +116,7 @@ const Strategy = () => {
             }}
           >
             <a download>
-              <img width="100%" src={require("../../../images/1.png")} />
+              <img width="100%" src={require("../../../images/温顶金融6步骤_英文版.png")} />
             </a>
           </Col>
         </Row>

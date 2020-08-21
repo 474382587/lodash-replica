@@ -11,7 +11,7 @@ import {
 } from "react-bootstrap"
 
 import { Carousel as AndtCarousel } from "antd"
-
+import { documentToHtmlString } from "@contentful/rich-text-html-renderer"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import "./index.scss"
@@ -19,7 +19,7 @@ import { Link } from "gatsby"
 
 const Contentful = require("contentful")
 const IndexPage = () => {
-  let slidesToShow = 4
+  let slidesToShow = 5
 
   if (typeof window !== `undefined`) {
     const windowWidth = window.innerWidth
@@ -96,6 +96,13 @@ const IndexPage = () => {
                       />
                       <Carousel.Caption>
                         {/*<h3>文字范例</h3>*/}
+                        <div
+                            className="caps"
+                          dangerouslySetInnerHTML={{ 
+                              __html: documentToHtmlString(banner.content)
+                               
+                            }}
+                        ></div>
                         <p
                           style={{
                             textAlign: "right",
@@ -131,6 +138,9 @@ const IndexPage = () => {
         </div>
 
         <Container className="margin-top80">
+          <h3 style={{ marginTop: 50, fontSize: "3rem", textAlign: "center" }}>
+            温顶为您提供
+          </h3>
           <Row>
             <Col sm="12" md="4">
               <Card style={{ width: "100%" }}>
@@ -138,7 +148,7 @@ const IndexPage = () => {
                 <Card.Body>
                   <Card.Title>贷款按揭</Card.Title>
                   <Card.Text>
-                    温顶贷款拥有加拿大华人第一贷款团队，为客户提供各大银行最优利率、专业团队一站式服务。
+                    温顶贷款拥有加拿大华人第一贷款团队，提供各大银行和贷款机构的最优利率和最佳贷款方案，为您“贷”来希望。
                   </Card.Text>
                   <Link className="btn btn-primary" to="/loan/services">
                     了解更多
@@ -152,8 +162,9 @@ const IndexPage = () => {
                 <Card.Body>
                   <Card.Title>财税规划</Card.Title>
                   <Card.Text>
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
+                    温顶金融为客户提供一站式财税咨询和规划的金融服务，为您的资产保航护驾。
+                    <br></br>
+                    <br></br>
                   </Card.Text>
                   <Link className="btn btn-primary" to="/fortune/corporate">
                     了解更多
@@ -170,8 +181,7 @@ const IndexPage = () => {
                 <Card.Body>
                   <Card.Title>财产保险</Card.Title>
                   <Card.Text>
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
+                    温顶旗下专业且热忱的保险服务团队，为您提供从个人到企业、从人身到财产等多方位的无忧保险方案。
                   </Card.Text>
                   <Link className="btn btn-primary" to="/insurance/corporate">
                     了解更多
@@ -181,13 +191,13 @@ const IndexPage = () => {
             </Col>
           </Row>
 
-          <Row className="margin-top80">
+          <Row className="margin100">
             <Col md="6" sm="12">
               <h2 className="big-title">选择温顶</h2>
             </Col>
             <Col md="6" sm="12">
               <p className="paragraph">
-                温顶贷款和财税咨询规划公司为贷款人和投资人提供专业、快捷和真诚的金融服务，为客户的购房安居带来希望，为客户的资产保驾护航。
+                温顶集团旗下的贷款按揭、财税规划和保险服务为贷款及投资人提供专业、快捷和真诚的金融服务，为您的购房安居带来希望，为您的资产保驾护航。
               </p>
             </Col>
           </Row>
@@ -199,9 +209,10 @@ const IndexPage = () => {
             style={{ color: "#777", textAlign: "center" }}
             className="paragraph"
           >
-            温顶集团旗下的贷款按揭与财税规划团队，屡获殊荣。温顶贷款连续多年（自2018年）荣登全加拿大华人贷款经纪第一名，而理财规划也是收获颇丰，联合创始人柯健莹连续
-            9 年进入全球寿险精英百万圆桌会议（MDRT），也是大温最年轻的 MDRT-TOT
-            获得者。
+            温顶集团旗下的贷款按揭与财税规划团队，屡获殊荣。温顶贷款许家齐（Elvis
+            Hui）带领的团队连续多年（自2018年）荣登全加拿大华人贷款经纪第一名，连续两年全国前三贷款经纪。温顶金融也是收获颇丰，联合创始人柯健莹（Carmen
+            Ke）连续 9
+            年进入全球寿险精英百万圆桌会议（MDRT），也是大温最年轻的百万圆桌会员（MDRT-TOT）获得者。
           </p>
 
           <div className="ant-carousel">
@@ -214,36 +225,45 @@ const IndexPage = () => {
               arrows
             >
               <div className="image-container">
-                <img width="100%" src={require("../images/1.png")} />
+                <img width="113px" src={require("../images/2020.png")} />
               </div>
               <div className="image-container">
-                <img width="100%" src={require("../images/2.png")} />
+                <img width="113px" src={require("../images/2019.png")} />
               </div>
               <div className="image-container">
-                <img width="100%" src={require("../images/3.png")} />
+                <img width="113px" src={require("../images/2018.jpg")} />
               </div>
               <div className="image-container">
-                <img width="100%" src={require("../images/1.png")} />
+                <img
+                  width="113px"
+                  src={require("../images/2018 - broker of the year.png")}
+                />
               </div>
               <div className="image-container">
-                <img width="100%" src={require("../images/2.png")} />
+                <img width="113px" src={require("../images/2017.jpg")} />
               </div>
               <div className="image-container">
-                <img width="100%" src={require("../images/3.png")} />
+                <img width="113px" src={require("../images/hallOfFame.jpg")} />
+              </div>
+              <div className="image-container">
+                <img width="113px" src={require("../images/MDRT.jpg")} />
               </div>
             </AndtCarousel>
           </div>
         </Container>
 
         <Container className="margin-top80">
+          <h3 style={{ marginTop: 50, fontSize: "3rem", textAlign: "center" }}>
+            温顶资讯
+          </h3>
           <Row>
             {cases.map((post, index) => {
               if (index > 1) {
                 return ""
               } else {
                 return (
-                  <Col md="6" sm="12">
-                    <Link to={'/post/?id=' + post.id}>
+                  <Col md="6" sm="12" key={index}>
+                    <Link to={"/post/?id=" + post.id}>
                       <Card style={{ width: "100%" }}>
                         <Card.Img variant="top" src={post.image} />
                         <Card.Body>
@@ -259,7 +279,7 @@ const IndexPage = () => {
           </Row>
           <Row
             style={{
-              marginTop: 30,
+              marginTop: 50,
             }}
           >
             <Col md="6" sm="6" xs="6" style={{ fontSize: 32 }}>

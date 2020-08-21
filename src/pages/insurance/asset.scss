@@ -7,6 +7,9 @@
     cursor: pointer;
     transition: color 0.3s;
     -webkit-text-decoration-skip: objects;
+    &:hover {
+        color: #969696;
+    }
   }
   margin-top: 40px;
   margin-bottom: 40px;

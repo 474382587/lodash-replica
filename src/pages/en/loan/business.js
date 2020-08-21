@@ -54,7 +54,7 @@ const Business = () => {
   return (
     <Layout pageInfo={{ pageName: "index" }}>
       {/* Modal */}
-      <div className="floater">
+      <div className="floater"><h3>联系我们</h3>
         <p
           style={{
             marginBottom: 0,

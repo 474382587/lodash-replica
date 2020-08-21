@@ -54,7 +54,7 @@ const Business = () => {
   return (
     <Layout pageInfo={{ pageName: "index" }}>
       {/* Modal */}
-      <div className="floater">
+      <div className="floater"><h3>联系我们</h3>
         <p
           style={{
             marginBottom: 0,
@@ -70,6 +70,7 @@ const Business = () => {
         </p>
       </div>
       <Container className="mt-5 business-services">
+      <section>
         <h1
           style={{
             textAlign: "center",
@@ -84,6 +85,8 @@ const Business = () => {
           ——
           而非代表贷款机构方，为您锁定最佳利率、搜寻当下市场中最好的贷款产品，制定最切合您财务状况的贷款方案。丰富的贷款方案满足您的独特需求。
         </h3>
+        </section>
+        <section>
         <h4 className="mt-5">商业贷款</h4>
         <Row>
           {services.map((item, index) => {
@@ -102,7 +105,9 @@ const Business = () => {
             )
           })}
         </Row>
-
+        </section>
+        
+        <section>
         <h4 className="mt-5">代理VS银行</h4>
         <Row>
           <Col>
@@ -114,7 +119,9 @@ const Business = () => {
             </video>
           </Col>
         </Row>
-
+        </section>
+        
+        <section>
         <h4 className="mt-5">合作机构</h4>
         <h3>
           温顶贷款和多家大小银行和金融机构保持长期合作关系，能够为客户提供数百个金融产品的选择。
@@ -166,7 +173,9 @@ const Business = () => {
             </div>
           </AndtCarousel>
         </div>
-
+        </section>
+        
+        
         <Row
           style={{
             marginTop: 30,

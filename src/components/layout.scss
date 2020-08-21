@@ -1,3 +1,32 @@
+html body {
+  font-family: "微软雅黑";
+}
+.floater {
+  h3 {
+    text-align: center;
+  }
+  a:hover {
+    color: #969696;
+  }
+}
+.caps {
+  text-align: left;
+  font-size: 24px;
+}
+.carousel-item {
+  position: relative;
+}
+.carousel-item::before {
+  display: block;
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.25);
+  z-index: 0;
+}
 .footer-content {
   a {
     color: #fff;
@@ -5,12 +34,16 @@
   }
   h5 {
     color: #fff;
+    font-size: 14px;
   }
   p {
-      font-size: 18px;
-      a {
-          font-size: 18px;
+    font-size: 14px;
+    a {
+      font-size: 14px;
+      &:hover {
+        color: #969696;
       }
+    }
   }
 }
 .footer-sections {
@@ -19,5 +52,14 @@
   border-bottom: 1px solid #6b625a;
 }
 .footer-container {
-    background-color: #645a52;
+  background-color: #645a52;
+}
+
+section {
+    margin: 100px 0;
+}
+@media screen and (max-width: 767px) {
+    section {
+        margin: 0 0;
+    }
 }
