@@ -2,52 +2,52 @@ import React, { useState, useEffect } from "react"
 import Layout from "../../components/layout"
 import { Carousel as AndtCarousel } from "antd"
 import { Row, Col, Container, Modal, Card, Button } from "react-bootstrap"
-
+import BotNav from "../../components/botNav"
 import "./services.scss"
 import { Link } from "gatsby"
 
 const services = [
   {
-    title: "购买新房",
+    title: "普通按揭",
     slug: "/loan/details/new-home",
     content:
       "不管您是首次购房族，还是有良好信用记录的有经验购房者，温顶贷款能够为您获得最佳贷款产品和利率。",
-    img: "",
+    image: "Mortgage 19.png",
   },
   {
     title: "贷款续借",
     slug: "/loan/details/renewal",
     content:
       "加拿大接近 60% 以上的借款人在贷款合约到期时，会根据原本的贷款机构提供的利率和条件直接续约。温顶贷款凭借长期与各大银行的合作关系，可以为您争取到更优利率和条件。",
-    img: "",
+    image: "Mortgage 16.png",
   },
   {
     title: "贷款重组",
     slug: "/loan/details/refine",
     content:
       "除了续借贷款之外，您还可以选择将贷款重组，即申请获得更优的贷款方案（利率或还款期等），用新贷款付清旧贷款。温顶建议您在贷款到期前 4 至 6 个月之前开始咨询其他更优利率贷款。",
-    img: "",
+    image: "Mortgage 15.png",
   },
   {
     title: "二 / 三级抵押（ETO）",
     slug: "/loan/details/eto",
     content:
       "如有资金需求，您可以考虑进行二级抵押（或三级抵押），凭借现有住房资产 —— 无需担心需要付清现有的一级贷款，从贷款机构获得更多现金流，满足生活事业中的其他需求。很多人因为在一级贷款期信用提高，或是想把浮动转成固定，都会考虑进行二 / 三级贷款。",
-    img: "",
+    image: "Mortgage 12.png",
   },
   {
     title: "特快私贷",
     slug: "/loan/details/quick-loan",
     content:
       "对于不少因为住房或是个人问题而无法从六大银行顺利获得贷款的客户，温顶还为您提供私人贷款机构的优质借贷方案。您无需准备繁琐的收入证明文件、资产报表和信用证明等文件。不论是购买新房、贷款重组、二级或三级贷款，还是楼花贷款， 私贷更加快捷和容易。",
-    img: "",
+    image: "Mortgage 10.png",
   },
   {
     title: "楼花贷款",
     slug: "/loan/details/apt-loan",
     content:
       "温顶贷款团队常年服务于楼花贷款的客户。好消息是：我们总是可以为你获得更优利率，更快审批，更便捷的咨询和申请流程。如果您想了解这个项目，可以致电 604-722-3222 或电邮：info@guaranti.ca。",
-    img: "",
+    image: "Mortgage 20.png",
   },
 ]
 const Contentful = require("contentful")
@@ -136,7 +136,7 @@ const Services = () => {
           </h3>
         </section>
         <section>
-          <h4 className="mt-5">住房贷款</h4>
+          <h4 className="mt-5">住房贷款 | 服务项目</h4>
           <Row>
             {services.map((item, index) => {
               return (
@@ -144,7 +144,7 @@ const Services = () => {
                   <Card style={{ width: "100%" }}>
                     <Card.Img
                       variant="top"
-                      src={require("../../images/1.jpg")}
+                      src={require("../../images/" + item.image)}
                     />
                     <Card.Body>
                       <Card.Title>{item.title}</Card.Title>
@@ -166,6 +166,11 @@ const Services = () => {
         </section>
         <section>
           <h4 className="mt-5">代理VS银行</h4>
+          <h3>
+            在加拿大，通常有两种渠道进行贷款申请：直接从贷款机构（如银行）直接贷款，或寻求持牌贷款经纪公司的帮助（如温顶贷款）。温顶贷款代表客户
+            ——
+            而非代表贷款机构方，为您锁定最佳利率、搜寻当下市场中最好的贷款产品，制定最切合您财务状况的贷款方案。
+          </h3>
           <Row>
             <Col>
               <video width="100%" controls name="media">
@@ -272,27 +277,8 @@ const Services = () => {
             ""
           )}
         </section>
-
-        <Row
-          style={{
-            marginTop: 30,
-          }}
-        >
-          <Col md="6" sm="6" xs="6" style={{ fontSize: 32 }}>
-            <Link to="/loan/business">◀商业贷款</Link>
-          </Col>
-          <Col
-            md="6"
-            sm="6"
-            xs="6"
-            style={{ textAlign: "right", fontSize: 32 }}
-          >
-            <a href="http://sv.mikecrm.com/JcYy9jm" target="_blank">
-              申请贷款▶
-            </a>
-          </Col>
-        </Row>
       </Container>
+      <BotNav llink="/loan/business" rlink="http://sv.mikecrm.com/JcYy9jm" left="商业贷款" right="申请贷款" />
     </Layout>
   )
 }

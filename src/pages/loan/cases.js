@@ -11,6 +11,7 @@ import {
 } from "react-bootstrap"
 import "./cases.scss"
 import { Link } from "gatsby"
+import BotNav from "../../components/botNav"
 
 const Contentful = require("contentful")
 
@@ -53,54 +54,34 @@ const Cases = () => {
   return (
     <Layout>
       <Container className="cases-services">
-      <section>
-        <h1 className="mt-5" style={{ textAlign: "center" }}>
-          成功案例
-        </h1>
-        <h3>
-          文案 helps you cut down development time by providing you with a
-          flexible website editor with a drag and drop interface. Mobirise
-          Website Builder creates responsive, retina and mobile friendly
-          websites in a few clicks.
-        </h3>
-     
-        <Row className="mt-5">
-          {cases.map(e => (
-            <Col md="4" sm="12" key={e.id}>
-              <Card style={{ width: "100%" }}>
-                <Card.Img variant="top" src={e.image} />
-                <Card.Body>
-                  <Card.Title>{e.title}</Card.Title>
-                  <Card.Text>{e.excerpt}</Card.Text>
-                  <Link className="btn btn-primary" to={"/post?id=" + e.id}>
-                    了解更多
-                  </Link>
-                </Card.Body>
-              </Card>
-            </Col>
-          ))}
-        </Row>
+        <section>
+          <h1 className="mt-5" style={{ textAlign: "center" }}>
+            成功案例
+          </h1>
+          <h3 style={{ textAlign: "center" }}>
+            温顶贷款每周更新成功案例，<br></br>
+            您的需求与困惑，他们曾经也有。
+          </h3>
+
+          <Row className="mt-5">
+            {cases.map(e => (
+              <Col md="4" sm="12" key={e.id}>
+                <Card style={{ width: "100%" }}>
+                  <Card.Img variant="top" src={e.image} />
+                  <Card.Body>
+                    <Card.Title>{e.title}</Card.Title>
+                    <Card.Text>{e.excerpt}</Card.Text>
+                    <Link className="btn btn-primary" to={"/post?id=" + e.id}>
+                      了解更多
+                    </Link>
+                  </Card.Body>
+                </Card>
+              </Col>
+            ))}
+          </Row>
         </section>
-        <Row
-          style={{
-            marginTop: 30,
-          }}
-        >
-          <Col md="6" sm="6" xs="6" style={{ fontSize: 32 }}>
-            <a href="http://sv.mikecrm.com/JcYy9jm" target="_blank">
-            ◀ 申请贷款 
-            </a>
-          </Col>
-          <Col
-            md="6"
-            sm="6"
-            xs="6"
-            style={{ textAlign: "right", fontSize: 32 }}
-          >
-            <Link to="/loan/services">住房贷款▶</Link>
-          </Col>
-        </Row>
       </Container>
+      <BotNav rlink="/loan/services" llink="http://sv.mikecrm.com/JcYy9jm" left="申请贷款" right="住房贷款" />
     </Layout>
   )
 }

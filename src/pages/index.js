@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-
+import BotNav from '../components/botNav'
 import {
   Row,
   Col,
@@ -97,11 +97,10 @@ const IndexPage = () => {
                       <Carousel.Caption>
                         {/*<h3>文字范例</h3>*/}
                         <div
-                            className="caps"
-                          dangerouslySetInnerHTML={{ 
-                              __html: documentToHtmlString(banner.content)
-                               
-                            }}
+                          className="caps"
+                          dangerouslySetInnerHTML={{
+                            __html: documentToHtmlString(banner.content),
+                          }}
                         ></div>
                         <p
                           style={{
@@ -248,6 +247,12 @@ const IndexPage = () => {
               <div className="image-container">
                 <img width="113px" src={require("../images/MDRT.jpg")} />
               </div>
+              <div className="image-container">
+                <img width="113px" src={require("../images/EPC.jpg")} />
+              </div>
+              <div className="image-container">
+                <img width="113px" src={require("../images/MDRT.jpg")} />
+              </div>
             </AndtCarousel>
           </div>
         </Container>
@@ -277,24 +282,8 @@ const IndexPage = () => {
               }
             })}
           </Row>
-          <Row
-            style={{
-              marginTop: 50,
-            }}
-          >
-            <Col md="6" sm="6" xs="6" style={{ fontSize: 32 }}>
-              <Link to="/about">◀关于温顶</Link>
-            </Col>
-            <Col
-              md="6"
-              sm="6"
-              xs="6"
-              style={{ textAlign: "right", fontSize: 32 }}
-            >
-              <Link to="/join">加入我们▶</Link>
-            </Col>
-          </Row>
         </Container>
+        <BotNav llink="/about" rlink="/join" left="关于温顶" right="加入我们" />
       </div>
     </Layout>
   )

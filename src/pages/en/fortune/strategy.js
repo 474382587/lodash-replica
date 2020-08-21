@@ -5,6 +5,7 @@ import { Carousel as AndtCarousel } from "antd"
 import { Row, Col, Container, Modal, Card, Button } from "react-bootstrap"
 import { Link } from "gatsby"
 import "./strategy.scss"
+import BotNav from "../../../components/botNav"
 
 const services = [
   {
@@ -64,7 +65,8 @@ const Strategy = () => {
   return (
     <Layout pageInfo={{ pageName: "index" }}>
       {/* Modal */}
-      <div className="floater"><h3>联系我们</h3>
+      <div className="floater">
+        <h3>联系我们</h3>
         <p
           style={{
             marginBottom: 0,
@@ -75,7 +77,10 @@ const Strategy = () => {
           <b>电话:</b> <a href="tel:+1 (778) 297 7450">+1 (778) 297 7450</a>{" "}
           <br></br>
           <div className="img-wrapper">
-            <img width="120" src={require("../../../images/baoxian-caishui.jpg")} />
+            <img
+              width="120"
+              src={require("../../../images/baoxian-caishui.jpg")}
+            />
           </div>
         </p>
       </div>
@@ -97,7 +102,10 @@ const Strategy = () => {
             return (
               <Col md="4" sm="12" key={index}>
                 <Card style={{ width: "100%" }}>
-                  <Card.Img variant="top" src={require("../../../images/1.png")} />
+                  <Card.Img
+                    variant="top"
+                    src={require("../../../images/1.png")}
+                  />
                   <Card.Body>
                     <Card.Title>{item.title}</Card.Title>
                     <Link className="btn btn-primary" to={item.slug}>
@@ -116,7 +124,10 @@ const Strategy = () => {
             }}
           >
             <a download>
-              <img width="100%" src={require("../../../images/温顶金融6步骤_英文版.png")} />
+              <img
+                width="100%"
+                src={require("../../../images/温顶金融6步骤_英文版.png")}
+              />
             </a>
           </Col>
         </Row>
@@ -136,59 +147,75 @@ const Strategy = () => {
             arrows
           >
             <div className="image-container">
-              <img width="100%" src={require("../../../images/partners/1.png")} />
+              <img
+                width="100%"
+                src={require("../../../images/partners/1.png")}
+              />
             </div>
             <div className="image-container">
-              <img width="100%" src={require("../../../images/partners/2.png")} />
+              <img
+                width="100%"
+                src={require("../../../images/partners/2.png")}
+              />
             </div>
             <div className="image-container">
-              <img width="100%" src={require("../../../images/partners/3.png")} />
+              <img
+                width="100%"
+                src={require("../../../images/partners/3.png")}
+              />
             </div>
             <div className="image-container">
-              <img width="100%" src={require("../../../images/partners/4.png")} />
+              <img
+                width="100%"
+                src={require("../../../images/partners/4.png")}
+              />
             </div>
             <div className="image-container">
-              <img width="100%" src={require("../../../images/partners/5.png")} />
+              <img
+                width="100%"
+                src={require("../../../images/partners/5.png")}
+              />
             </div>
             <div className="image-container">
-              <img width="100%" src={require("../../../images/partners/6.png")} />
+              <img
+                width="100%"
+                src={require("../../../images/partners/6.png")}
+              />
             </div>
             <div className="image-container">
-              <img width="100%" src={require("../../../images/partners/7.png")} />
+              <img
+                width="100%"
+                src={require("../../../images/partners/7.png")}
+              />
             </div>
             <div className="image-container">
-              <img width="100%" src={require("../../../images/partners/8.png")} />
+              <img
+                width="100%"
+                src={require("../../../images/partners/8.png")}
+              />
             </div>
             <div className="image-container">
-              <img width="100%" src={require("../../../images/partners/9.png")} />
+              <img
+                width="100%"
+                src={require("../../../images/partners/9.png")}
+              />
             </div>
             <div className="image-container">
-              <img width="100%" src={require("../../../images/partners/10.png")} />
+              <img
+                width="100%"
+                src={require("../../../images/partners/10.png")}
+              />
             </div>
             <div className="image-container">
-              <img width="100%" src={require("../../../images/partners/11.png")} />
+              <img
+                width="100%"
+                src={require("../../../images/partners/11.png")}
+              />
             </div>
           </AndtCarousel>
         </div>
-
-        <Row
-          style={{
-            marginTop: 30,
-          }}
-        >
-          <Col md="6" sm="6" xs="6" style={{ fontSize: 32 }}>
-            <Link to="/fortune/plan">◀投资方案</Link>
-          </Col>
-          <Col
-            md="6"
-            sm="6"
-            xs="6"
-            style={{ textAlign: "right", fontSize: 32 }}
-          >
-            <Link to="/fortune/corporate">企业规划▶</Link>
-          </Col>
-        </Row>
       </Container>
+      <BotNav llink="/fortune/plan" rlink="/fortune/corporate" left="投资方案" right="企业规划" />
     </Layout>
   )
 }

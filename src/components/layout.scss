@@ -56,10 +56,60 @@ html body {
 }
 
 section {
-    margin: 100px 0;
+  margin: 100px 0;
 }
-@media screen and (max-width: 767px) {
-    section {
-        margin: 0 0;
+.bot-nav {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  .bot-nav-left,
+  .bot-nav-right {
+    width: 50%;
+    text-align: right;
+    transition: background-color 0.7s ease-in-out;
+    .left-nav {
+      padding-left: 30px;
+      transition: all 0.7s ease-in-out;
     }
+    .right-nav {
+      padding-right: 30px;
+      transition: all 0.7s ease-in-out;
+    }
+    &:hover {
+      background-color: #e8d2a0;
+      .left-nav {
+        padding-left: 0px;
+      }
+      .right-nav {
+        padding-right: 0px;
+      }
+    }
+  }
+  .bot-nav-left {
+    text-align: left;
+    border-right: 1px solid #fff;
+  }
+  a {
+    display: block;
+    height: 100%;
+    width: 100%;
+    padding: 50px 20px;
+    font-size: 24px;
+    color: #fff !important;
+  }
+  & > div {
+    background-color: #7a7a7a;
+    padding: 0;
+  }
+  border-bottom: 1px solid #fff;
+  margin-top: 100px;
+}
+
+@media screen and (max-width: 767px) {
+  section {
+    margin: 0 0;
+  }
+  .bot-nav {
+    margin-top: 30px;
+  }
 }

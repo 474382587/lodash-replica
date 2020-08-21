@@ -5,6 +5,7 @@ import { Carousel as AndtCarousel } from "antd"
 import { Row, Col, Container, Modal, Card, Button } from "react-bootstrap"
 import { Link } from "gatsby"
 import "./strategy.scss"
+import BotNav from "../../components/botNav"
 
 const services = [
   {
@@ -221,24 +222,8 @@ const Strategy = () => {
             </AndtCarousel>
           </div>
         </section>
-        <Row
-          style={{
-            marginTop: 30,
-          }}
-        >
-          <Col md="6" sm="6" xs="6" style={{ fontSize: 32 }}>
-            <Link to="/fortune/plan">◀投资方案</Link>
-          </Col>
-          <Col
-            md="6"
-            sm="6"
-            xs="6"
-            style={{ textAlign: "right", fontSize: 32 }}
-          >
-            <Link to="/fortune/corporate">企业规划▶</Link>
-          </Col>
-        </Row>
       </Container>
+      <BotNav llink="/fortune/plan" rlink="/fortune/corporate" left="投资方案" right="企业规划" />
     </Layout>
   )
 }

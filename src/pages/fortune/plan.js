@@ -6,6 +6,7 @@ import { Row, Col, Container, Modal, Card, Button } from "react-bootstrap"
 
 import "./plan.scss"
 import { Link } from "gatsby"
+import BotNav from "../../components/botNav"
 
 const services = [
   {
@@ -234,24 +235,8 @@ const Plan = () => {
             </AndtCarousel>
           </div>
         </section>
-        <Row
-          style={{
-            marginTop: 30,
-          }}
-        >
-          <Col md="6" sm="6" xs="6" style={{ fontSize: 32 }}>
-            <Link to="/fortune/strategy">◀理财策略</Link>
-          </Col>
-          <Col
-            md="6"
-            sm="6"
-            xs="6"
-            style={{ textAlign: "right", fontSize: 32 }}
-          >
-            <Link to="/fortune/corporate">企业规划▶</Link>
-          </Col>
-        </Row>
       </Container>
+      <BotNav llink="/fortune/strategy" rlink="/fortune/corporate" left="理财策略" right="企业规划" />
     </Layout>
   )
 }

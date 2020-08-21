@@ -6,6 +6,7 @@ import { Row, Col, Container, Modal, Card, Button } from "react-bootstrap"
 
 import "./corporate.scss"
 import { Link } from "gatsby"
+import BotNav from "../../../components/botNav"
 
 const services = [
   {
@@ -105,24 +106,10 @@ const Corporate = () => {
           })}
         </Row>
 
-        <Row
-          style={{
-            marginTop: 30,
-          }}
-        >
-          <Col md="6" sm="6" xs="6" style={{ fontSize: 32 }}>
-            <Link to="/insurance/strategy">◀个人保险</Link>
-          </Col>
-          <Col
-            md="6"
-            sm="6"
-            xs="6"
-            style={{ textAlign: "right", fontSize: 32 }}
-          >
-            <Link to="/insurance/asset">财产保险▶</Link>
-          </Col>
-        </Row>
       </Container>
+      <BotNav llink="/insurance/strategy" rlink="/insurance/asset" left="个人保险" right="财产保险" />
+      
+      
     </Layout>
   )
 }

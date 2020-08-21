@@ -4,6 +4,7 @@ import { Carousel as AndtCarousel } from "antd"
 import { Row, Col, Container, Modal, Card, Button } from "react-bootstrap"
 import { Link } from "gatsby"
 import "./join.scss"
+import BotNav from "../../components/botNav"
 
 const Contentful = require("contentful")
 const Join = () => {
@@ -70,24 +71,9 @@ const Join = () => {
             it is a desktop app.
           </p>
         </div>
-        <Row
-          style={{
-            marginTop: 30,
-          }}
-        >
-          <Col md="6" sm="6" xs="6" style={{ fontSize: 32 }}>
-            <Link to="/about"> ◀公司介绍 </Link>
-          </Col>
-          <Col
-            md="6"
-            sm="6"
-            xs="6"
-            style={{ textAlign: "right", fontSize: 32 }}
-          >
-            <Link to="/team"> 团队成员▶</Link>
-          </Col>
-        </Row>
+        
       </Container>
+      <BotNav llink="/about" rlink="/join" left="公司介绍" right="团队成员" />
     </Layout>
   )
 }

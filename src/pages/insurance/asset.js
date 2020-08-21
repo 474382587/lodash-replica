@@ -5,6 +5,7 @@ import { Link } from "gatsby"
 import Navbar from "../../components/navBar.js"
 
 import "./asset.scss"
+import BotNav from "../../components/botNav"
 const Asset = () => {
   return (
     <Layout pageInfo={{ pageName: "index" }}>
@@ -50,24 +51,9 @@ const Asset = () => {
           today. It also gives you the freedom to develop as many websites as
           you like given the fact that it is a desktop app.
         </p>
-        <Row
-          style={{
-            marginTop: 30,
-          }}
-        >
-          <Col md="6" sm="6" xs="6" style={{ fontSize: 32 }}>
-            <Link to="/insurance/strategy">◀个人保险</Link>
-          </Col>
-          <Col
-            md="6"
-            sm="6"
-            xs="6"
-            style={{ textAlign: "right", fontSize: 32 }}
-          >
-            <Link to="/insurance/corporate">企业保险▶</Link>
-          </Col>
-        </Row>
+        
       </Container>
+      <BotNav llink="/insurance/strategy" rlink="/insurance/corporate" left="个人保险" right="企业保险" />
     </Layout>
   )
 }

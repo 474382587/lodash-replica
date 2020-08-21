@@ -4,6 +4,7 @@ import { Carousel as AndtCarousel } from "antd"
 import { Row, Col, Container, Modal, Card, Button } from "react-bootstrap"
 import "./about.scss"
 import { Link } from "gatsby"
+import BotNav from "../components/botNav"
 const About = () => {
   let slidesToShow = 5
 
@@ -101,24 +102,8 @@ const About = () => {
             <img src={require("../images/1.png")} />
           </div>
         </section>
-        <Row
-          style={{
-            marginTop: 30,
-          }}
-        >
-          <Col md="6" sm="6" xs="6" style={{ fontSize: 32 }}>
-            <Link to="/join">◀加入我们</Link>
-          </Col>
-          <Col
-            md="6"
-            sm="6"
-            xs="6"
-            style={{ textAlign: "right", fontSize: 32 }}
-          >
-            <Link to="/team">团队成员▶</Link>
-          </Col>
-        </Row>
       </Container>
+      <BotNav llink="/join" rlink="/team" left="加入我们" right="团队成员" />
     </Layout>
   )
 }
