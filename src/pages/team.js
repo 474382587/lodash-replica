@@ -164,7 +164,7 @@ const Team = () => {
 
         <section>
           <h2>温顶团队成员</h2>
-        </section>
+        
         <Row>
           {members.map(member => {
             return (
@@ -184,6 +184,7 @@ const Team = () => {
             )
           })}
         </Row>
+        </section>
         <Row
           style={{
             marginTop: 30,

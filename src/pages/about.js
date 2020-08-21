@@ -18,34 +18,37 @@ const About = () => {
   return (
     <Layout>
       <Container className="about-services">
-        <div className="title">
-          <h1>关于温顶</h1>
-          <h3>
-            Click any text or icon to edit or style it. Use the block parameters
-            to hide/show text or icons and change media size or position.
-          </h3>
-        </div>
-        <Row>
-          <Col md="6" sm="12" className="center-align">
-            <h4>我们的使命</h4>
-            <p>
-              Mobirise is an easy website builder - just drop site elements to
-              your page, add content and style it to look the way you like.
-            </p>
-          </Col>
-          <Col md="6" sm="12" className="center-align">
-            <h4>我们的目标</h4>
-            <p>
-              Mobirise is an easy website builder - just drop site elements to
-              your page, add content and style it to look the way you like.
-            </p>
-          </Col>
-        </Row>
-        <Row className="mt-5">
-          <Col className="center-align">
-            <img src={require("../images/1.png")} />
-          </Col>
-        </Row>
+        <section>
+          <div className="title">
+            <h1>关于温顶</h1>
+            <h3>
+              Click any text or icon to edit or style it. Use the block
+              parameters to hide/show text or icons and change media size or
+              position.
+            </h3>
+          </div>
+          <Row>
+            <Col md="6" sm="12" className="center-align">
+              <h4>我们的使命</h4>
+              <p>
+                Mobirise is an easy website builder - just drop site elements to
+                your page, add content and style it to look the way you like.
+              </p>
+            </Col>
+            <Col md="6" sm="12" className="center-align">
+              <h4>我们的目标</h4>
+              <p>
+                Mobirise is an easy website builder - just drop site elements to
+                your page, add content and style it to look the way you like.
+              </p>
+            </Col>
+          </Row>
+          <Row className="mt-5">
+            <Col className="center-align">
+              <img src={require("../images/1.png")} />
+            </Col>
+          </Row>
+        </section>
         <section>
           <h2>温顶荣誉</h2>
           <p>
@@ -113,7 +116,6 @@ const About = () => {
             style={{ textAlign: "right", fontSize: 32 }}
           >
             <Link to="/team">团队成员 ▶</Link>
-            
           </Col>
         </Row>
       </Container>

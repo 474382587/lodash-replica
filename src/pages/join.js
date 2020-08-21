@@ -36,40 +36,43 @@ const Join = () => {
   return (
     <Layout>
       <Container className="join-services">
-        <div className="title">
-          <h1>加入温顶</h1>
-        </div>
-        <div>
-          <img width="100%" src={require("../images/1.jpg")} />
-        </div>
-        <Row>
-          {jobs.map(job => {
-            return (
-              <Col md="6" sm="12" className="job-card">
-                <div className="left">
-                  <h4>{job.title}</h4>
-                  <p>{job.intro ? job.intro : ""}</p>
-                </div>
-                <div className="right">
-                  <a target="_blank" download href={job.pdf}>
-                    Apply
-                  </a>
-                </div>
-              </Col>
-            )
-          })}
-        </Row>
-        <div className="more">
-          <p>
-            更多职位! Mobirise helps you cut down development time by providing
-            you with a flexible website editor with a drag and drop interface.
-            Mobirise Website Builder creates responsive, retina and mobile
-            friendly websites in a few clicks. Mobirise is one of the easiest
-            website development tools available today. It also gives you the
-            freedom to develop as many websites as you like given the fact that
-            it is a desktop app.
-          </p>
-        </div>
+        <section>
+          <div className="title">
+            <h1>加入温顶</h1>
+          </div>
+          <div>
+            <img width="100%" src={require("../images/1.jpg")} />
+          </div>
+          <Row>
+            {jobs.map(job => {
+              return (
+                <Col md="6" sm="12" className="job-card">
+                  <div className="left">
+                    <h4>{job.title}</h4>
+                    <p>{job.intro ? job.intro : ""}</p>
+                  </div>
+                  <div className="right">
+                    <a target="_blank" download href={job.pdf}>
+                      Apply
+                    </a>
+                  </div>
+                </Col>
+              )
+            })}
+          </Row>
+
+          <div className="more">
+            <p>
+              更多职位! Mobirise helps you cut down development time by
+              providing you with a flexible website editor with a drag and drop
+              interface. Mobirise Website Builder creates responsive, retina and
+              mobile friendly websites in a few clicks. Mobirise is one of the
+              easiest website development tools available today. It also gives
+              you the freedom to develop as many websites as you like given the
+              fact that it is a desktop app.
+            </p>
+          </div>
+        </section>
         <Row
           style={{
             marginTop: 30,
