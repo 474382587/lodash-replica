@@ -50,11 +50,11 @@ const Join = () => {
                 <Col md="6" sm="12" className="job-card">
                   <div className="left">
                     <h4>{job.title}</h4>
-                    <p>{job.intro ? job.intro : ""}</p>
+                    {/**<p>{job.intro ? job.intro : ""}</p> */}
                   </div>
                   <div className="right">
                     <a target="_blank" download href={job.pdf}>
-                      Apply
+                      现在申请
                     </a>
                   </div>
                 </Col>
@@ -74,7 +74,6 @@ const Join = () => {
             </p>
           </div>
         </section>
-       
       </Container>
       <BotNav llink="/about" rlink="/team" left="公司介绍" right="团队成员" />
     </Layout>

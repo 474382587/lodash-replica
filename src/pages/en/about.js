@@ -20,25 +20,27 @@ const About = () => {
     <Layout>
       <Container className="about-services">
         <div className="title">
-          <h1>关于温顶</h1>
+          <h1>ABOUT US</h1>
           <h3>
-            Click any text or icon to edit or style it. Use the block parameters
-            to hide/show text or icons and change media size or position.
+            Guaranti Group is a one-stop mortgage and financial service
+            platform, providing the top residential and commercial mortgage
+            solutions, as well as the well-rounded financial planning and
+            insurance services that cover a variety of needs for clients.
           </h3>
         </div>
         <Row>
           <Col md="6" sm="12" className="center-align">
-            <h4>我们的使命</h4>
+            <h4>Our vision</h4>
             <p>
-              Mobirise is an easy website builder - just drop site elements to
-              your page, add content and style it to look the way you like.
+              Our vision is to bring you hope, growth and protection for
+              yourself, your family and your business.
             </p>
           </Col>
           <Col md="6" sm="12" className="center-align">
-            <h4>我们的目标</h4>
+            <h4>Our mission</h4>
             <p>
-              Mobirise is an easy website builder - just drop site elements to
-              your page, add content and style it to look the way you like.
+              To bring you hope, growth and protection with our top,
+              well-rounded and professional service in good faith.
             </p>
           </Col>
         </Row>
