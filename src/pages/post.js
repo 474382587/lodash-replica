@@ -21,7 +21,7 @@ const Post = ({ location }) => {
       console.log(res)
       setPost({
         ...res.fields,
-        date: new Date(res.sys.createdAt).toDateString(),
+        // date: new Date(res.sys.createdAt).toDateString(),
       })
       const htmlString = documentToHtmlString(res.fields.content)
       if (typeof document !== "undefined") {

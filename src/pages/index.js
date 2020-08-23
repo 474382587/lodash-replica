@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import BotNav from '../components/botNav'
+import BotNav from "../components/botNav"
 import {
   Row,
   Col,
@@ -208,10 +208,7 @@ const IndexPage = () => {
             style={{ color: "#777", textAlign: "center" }}
             className="paragraph"
           >
-            温顶集团旗下的贷款按揭与财税规划团队，屡获殊荣。温顶贷款许家齐（Elvis
-            Hui）带领的团队连续多年（自2018年）荣登全加拿大华人贷款经纪第一名，连续两年全国前三贷款经纪。温顶金融也是收获颇丰，联合创始人柯健莹（Carmen
-            Ke）连续 9
-            年进入全球寿险精英百万圆桌会议（MDRT），也是大温最年轻的百万圆桌会员（MDRT-TOT）获得者。
+            对温顶而言，最不缺的是荣誉，最缺的也是荣誉。已经硕果累累的我们，希望在未来通过努力，服务好客户，斩获更多荣誉。
           </p>
 
           <div className="ant-carousel">

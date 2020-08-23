@@ -102,7 +102,7 @@ const CustomNavbar = ({ pageInfo, handleOpen }) => {
                       <Link to="/en/about">公司介绍</Link>
                     </NavDropdown.Item>
                     <NavDropdown.Item as="div">
-                      <Link to="/en/team">我们的团队</Link>
+                      <Link to="/en/team">团队成员</Link>
                     </NavDropdown.Item>
                   </NavDropdown>
                   <NavItem>
@@ -216,7 +216,7 @@ const CustomNavbar = ({ pageInfo, handleOpen }) => {
                       <Link to="/about">公司介绍</Link>
                     </NavDropdown.Item>
                     <NavDropdown.Item as="div">
-                      <Link to="/team">我们的团队</Link>
+                      <Link to="/team">团队成员</Link>
                     </NavDropdown.Item>
                   </NavDropdown>
                   <NavLink className="add-arrow" href="/join">
@@ -329,7 +329,7 @@ const CustomNavbar = ({ pageInfo, handleOpen }) => {
                     <Link to="/about">公司介绍</Link>
                   </NavDropdown.Item>
                   <NavDropdown.Item as="div">
-                    <Link to="/team">我们的团队</Link>
+                    <Link to="/team">团队成员</Link>
                   </NavDropdown.Item>
                 </NavDropdown>
                 <NavLink className="add-arrow" href="/join">
