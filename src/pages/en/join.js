@@ -37,43 +37,44 @@ const Join = () => {
   return (
     <Layout>
       <Container className="join-services">
-        <div className="title">
-          <h1>加入温顶</h1>
-        </div>
-        <div>
-          <img width="100%" src={require("../../images/1.jpg")} />
-        </div>
-        <Row>
-          {jobs.map(job => {
-            return (
-              <Col md="6" sm="12" className="job-card">
-                <div className="left">
-                  <h4>{job.title}</h4>
-                  <p>{job.intro ? job.intro : ""}</p>
-                </div>
-                <div className="right">
-                  <a target="_blank" download href={job.pdf}>
-                    Apply
-                  </a>
-                </div>
-              </Col>
-            )
-          })}
-        </Row>
-        <div className="more">
-          <p>
-            更多职位! Mobirise helps you cut down development time by providing
-            you with a flexible website editor with a drag and drop interface.
-            Mobirise Website Builder creates responsive, retina and mobile
-            friendly websites in a few clicks. Mobirise is one of the easiest
-            website development tools available today. It also gives you the
-            freedom to develop as many websites as you like given the fact that
-            it is a desktop app.
-          </p>
-        </div>
-        
+        <section>
+          <div className="title">
+            <h1>Join Us</h1>
+          </div>
+          <div>
+            <img width="100%" src={require("../../images/1.jpg")} />
+          </div>
+          <Row>
+            {jobs.map(job => {
+              return (
+                <Col md="6" sm="12" className="job-card">
+                  <div className="left">
+                    <h4>{job.title}</h4>
+                    {/**<p>{job.intro ? job.intro : ""}</p> */}
+                  </div>
+                  <div className="right">
+                    <a target="_blank" download href={job.pdf}>
+                      Apply
+                    </a>
+                  </div>
+                </Col>
+              )
+            })}
+          </Row>
+
+          <div className="more">
+            <p>
+              Guaranti Group is a newly revamped one-stop financial service
+              platform for mortgage and loans, wealth management and investment,
+              insurance and tax planning. While doing our best to serve every
+              dear customer, Guaranti welcomes new graduates, young and
+              experienced professionals to join us and bring our belief and
+              service to a bigger community.{" "}
+            </p>
+          </div>
+        </section>
       </Container>
-      <BotNav llink="/about" rlink="/join" left="公司介绍" right="团队成员" />
+      <BotNav llink="/about" rlink="/team" left="公司介绍" right="团队成员" />
     </Layout>
   )
 }

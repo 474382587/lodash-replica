@@ -14,25 +14,25 @@ const services = [
     slug: "/insurance/details/group",
     content:
       "如果您缺少建房资金，得知预算后，温顶会为您挑选最合适的贷款产品。通常建筑贷款不会一次性付清，而是分期支付（通常4次）。每次发放贷款，都会重新审核贷款条件。",
-    img: "",
+    image: "团体保险.jpg",
   },
   {
     title: "企业家医疗信托",
     slug: "/insurance/details/trust",
     content: "主要针对仓库，办公室或空地等投资资金。",
-    img: "",
+    image: "企业家医疗信托.jpeg",
   },
   {
     title: "企业关键人保险",
     slug: "/insurance/details/individual",
     content: "如果您是中小企业业主，需要资金运营",
-    img: "",
+    image: "企业关键人保险.jpg",
   },
   {
     title: "高管退休计划",
     slug: "/insurance/details/retirement",
     content: "如果您是中小企业业主，需要资金运营",
-    img: "",
+    image: "高管退休计划.jpg",
   },
 ]
 
@@ -101,7 +101,7 @@ const Corporate = () => {
                   <Card style={{ width: "100%" }}>
                     <Card.Img
                       variant="top"
-                      src={require("../../images/1.png")}
+                      src={require("../../images/" + item.image)}
                     />
                     <Card.Body>
                       <Card.Title>{item.title}</Card.Title>

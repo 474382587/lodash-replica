@@ -64,13 +64,7 @@ const Join = () => {
 
           <div className="more">
             <p>
-              更多职位! Mobirise helps you cut down development time by
-              providing you with a flexible website editor with a drag and drop
-              interface. Mobirise Website Builder creates responsive, retina and
-              mobile friendly websites in a few clicks. Mobirise is one of the
-              easiest website development tools available today. It also gives
-              you the freedom to develop as many websites as you like given the
-              fact that it is a desktop app.
+              温顶集团是一个全新的集合贷款、理财、投资、保险和税务等一站式金融咨询和财税规划服务平台，在服务好每一位客户的同时，温顶欢迎学习热情高及适应能力强的年轻专业人士，或是拥有资深经验的职场老兵一起加入，将温顶的品牌理念和专业服务送达至更多人的心中。
             </p>
           </div>
         </section>

@@ -80,10 +80,12 @@ const About = () => {
           </AndtCarousel>
         </div>
         <section>
-          <h2>媒体报道</h2>
+          <h2>温顶资讯</h2>
           <p>最真诚的面貌，最专业的服务</p>
           <div className="image-container">
-            <img src={require("../images/1.png")} />
+            <Link to="/news">
+              <img src={require("../images/媒体报道图.jpg")} />
+            </Link>
           </div>
         </section>
       </Container>

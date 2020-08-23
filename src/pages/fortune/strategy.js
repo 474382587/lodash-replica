@@ -13,31 +13,31 @@ const services = [
     slug: "/fortune/details/plan",
     content:
       "如果您缺少建房资金，得知预算后，温顶会为您挑选最合适的贷款产品。通常建筑贷款不会一次性付清，而是分期支付（通常4次）。每次发放贷款，都会重新审核贷款条件。",
-    img: "",
+    image: "家庭全面规划.jpg",
   },
   {
     title: "政府福利",
     slug: "/fortune/details/welfare",
     content: "主要针对仓库，办公室或空地等投资资金。",
-    img: "",
+    image: "政府福利.jpg",
   },
   {
     title: "退休策划",
     slug: "/fortune/details/retirement",
     content: "如果您是中小企业业主，需要资金运营",
-    img: "",
+    image: "退休策划.jpg",
   },
   {
     title: "遗产传承",
     slug: "/fortune/details/legacy",
     content: "如果您是中小企业业主，需要资金运营",
-    img: "",
+    image: "遗产传承.jpg",
   },
   {
     title: "风险管理",
     slug: "/fortune/details/risk",
     content: "如果您是中小企业业主，需要资金运营",
-    img: "",
+    image: "风险管理.jpg",
   },
 ]
 
@@ -107,7 +107,7 @@ const Strategy = () => {
                   <Card style={{ width: "100%" }}>
                     <Card.Img
                       variant="top"
-                      src={require("../../images/1.png")}
+                      src={require("../../images/" + item.image)}
                     />
                     <Card.Body>
                       <Card.Title>{item.title}</Card.Title>
@@ -138,11 +138,10 @@ const Strategy = () => {
           </Row>
         </section>
         <section>
-          <h4 className="mt-5">我们的合作机构</h4>
+          <h4 className="mt-5">合作机构</h4>
           <h3>
-            +++Click any image to change it.Click blue "Gear" icon in the top
-            right corner to change background, amount slides and amount visible
-            items at once.+++
+          温顶贷款和多家大小银行和金融机构保持长期合作关系，能够为客户提供数百个金融产品的选择。 作为专业且富有丰富经验的贷款经纪公司，我们会根据客户的不同情况，在众多产品中为客户选择最适合他们的贷款方案。丰富的贷款方案满足您的独特需求。
+
           </h3>
           <div className="ant-carousel">
             <AndtCarousel

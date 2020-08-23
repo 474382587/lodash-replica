@@ -13,43 +13,43 @@ const services = [
     slug: "/insurance/details/life",
     content:
       "如果您缺少建房资金，得知预算后，温顶会为您挑选最合适的贷款产品。通常建筑贷款不会一次性付清，而是分期支付（通常4次）。每次发放贷款，都会重新审核贷款条件。",
-    img: "",
+    image: "人寿保险.png",
   },
   {
     title: "参与性分红保险",
     slug: "/insurance/details/bonus",
     content: "主要针对仓库，办公室或空地等投资资金。",
-    img: "",
+    image: "参与性分红保险.png",
   },
   {
     title: "贷款保险",
     slug: "/insurance/details/loan",
     content: "如果您是中小企业业主，需要资金运营",
-    img: "",
+    image: "贷款保险.jpg",
   },
   {
     title: "大病保险",
     slug: "/insurance/details/illness",
     content: "如果您是中小企业业主，需要资金运营",
-    img: "",
+    image: "大病保险.jpg",
   },
   {
     title: "长期护理",
     slug: "/insurance/details/long-term",
     content: "如果您是中小企业业主，需要资金运营",
-    img: "",
+    image: "长期护理.jpg",
   },
   {
     title: "财富传承",
     slug: "/insurance/details/wealth",
     content: "如果您是中小企业业主，需要资金运营",
-    img: "",
+    image: "财富传承.jpg",
   },
   {
     title: "保险信托",
     slug: "/insurance/details/insurance-trust",
     content: "如果您是中小企业业主，需要资金运营",
-    img: "",
+    image: "保险信托.jpg",
   },
 ]
 
@@ -119,7 +119,7 @@ const Strategy = () => {
                   <Card style={{ width: "100%" }}>
                     <Card.Img
                       variant="top"
-                      src={require("../../images/1.png")}
+                      src={require("../../images/" + item.image)}
                     />
                     <Card.Body>
                       <Card.Title>{item.title}</Card.Title>
