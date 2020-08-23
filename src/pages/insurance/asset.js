@@ -16,15 +16,16 @@ const Asset = () => {
             <Col md="8" sm="12" className="left-side">
               <div>
                 <h1> 财产保险</h1>
-                <h4>Beautiful mobile websites</h4>
-                <p>
-                  Click any text to edit or style it. Select text to insert a
-                  link. Click blue "Gear" icon in the top right corner to
-                  hide/show buttons, text, title and change the block
-                  background.
+                {/**<h4>Beautiful mobile websites</h4> */}
+                <p style={{ fontSize: 20 }}>
+                  温顶通过与专业热忱的一般险经纪团队，为您提供包括包括车险、房屋险、旅游险和商业险等在内的多种财产保险类别。
                 </p>
                 <p>
-                  <Button>联系我们</Button>
+                  <Button>
+                    <a href="tel:+1(778)2977450" style={{ color: "#fff" }}>
+                      联系我们
+                    </a>
+                  </Button>
                 </p>
               </div>
             </Col>
@@ -34,26 +35,24 @@ const Asset = () => {
       </div>
       <Container className="asset-container">
         <p>
-          业务介绍 Mobirise helps you cut down development time by providing you
-          with a flexible website editor with a drag and drop interface.
-          Mobirise Website Builder creates responsive, retina and mobile
-          friendly websites in a few clicks. Mobirise is one of the easiest
-          website development tools available today. It also gives you the
-          freedom to develop as many websites as you like given the fact that it
-          is a desktop app.
+          财产保险中的房屋保险，是目前温顶客户咨询最多的一种类别。在加拿大，房屋保险的种类分得特别细致。与华人及移民关系较大的，主要有以下几种：
         </p>
+        <ul style={{ fontSize: 20 }}>
+          <li>自住房保险（Homeowners Insurance）</li>
+          <li>租客保险</li>
+          <li>房东保险</li>
+          <li>公寓或联排别墅等共管物业的保险</li>
+        </ul>
         <p>
-          Make your own website in a few clicks! Mobirise helps you cut down
-          development time by providing you with a flexible website editor with
-          a drag and drop interface. Mobirise Website Builder creates
-          responsive, retina and mobile friendly websites in a few clicks.
-          Mobirise is one of the easiest website development tools available
-          today. It also gives you the freedom to develop as many websites as
-          you like given the fact that it is a desktop app.
+          房屋保险范围分为基本保险和附加险，有些保险类别不在基本保险中，需要酌情额外购买，并且有些可能十分重要。当然，房屋保险也有很多不予理赔的项目：如空置物业超过30天；或是住房用作商业用途等。
         </p>
-        
       </Container>
-      <BotNav llink="/insurance/strategy" rlink="/insurance/corporate" left="个人保险" right="企业保险" />
+      <BotNav
+        llink="/insurance/strategy"
+        rlink="/insurance/corporate"
+        left="个人保险"
+        right="企业保险"
+      />
     </Layout>
   )
 }
