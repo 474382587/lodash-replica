@@ -77,7 +77,7 @@ const Team = () => {
       <Container className="team-services">
         <div className="title">
           <h1>我们的团队</h1>
-          <h3>我们的团队副标题</h3>
+        {/**<h3>我们的团队副标题</h3> */}
         </div>
         <Row className="flexie">
           <Col md="5" sm="12" className="center-align">
@@ -104,8 +104,9 @@ const Team = () => {
               贷款经纪 连续 2 年获得加拿大专业贷款经纪大奖“年度最佳贷款经纪”提名
               <br />
               2016 年以来贷款金额超过 10 亿加元，帮助超过数千名客户完成贷款审批
+              {/** */}
               <br />
-              <a href="#">点击阅读更多</a>
+              <Link to="/teams/elvis">点击阅读更多</Link>
             </p>
           </Col>
         </Row>
@@ -123,8 +124,8 @@ const Team = () => {
               TOT），也是大温最年轻的女性百万圆桌会员。Carmen
               持有多个金融牌照，目前名下管理资产过亿元。同时作为一名注册长者退休策划师的她，也是大温电台1320/1470
               《财税教室》节目主持人。
-              <br />
-              <a href="#">点击阅读更多</a>
+              {/**<br />
+              <a href="#">点击阅读更多</a> */}
             </p>
           </Col>
           <Col md="5" sm="12" className="center-align">
@@ -138,55 +139,47 @@ const Team = () => {
           </Col>
           <Col md="7" sm="12" className="left-align padding-left">
             <h4>
-              <i>许家齐 | Elvis Hui 温顶金融创始人兼CEO</i>
+              <i>何超彬（Alfred He） | 保险协会特许保险专家</i>
             </h4>
             <p>
-              许家齐（Elvis）移民至加拿大已经十多年，在温哥华定居后，2012
-              年进入贷款行业。入行前并没有相关经验的他，凭借着踏实勤恳的干劲，从英属哥伦比亚大学（UBC）获得贷款经纪证书后，短短几年内，就在全加拿大超过万名的贷款经纪人中冲入前
-              75 名。 Elvis
-              始终坚持专业至上、实事求是的服务理念，这个准则赢得了客户一致好评。作为大温地区贷款经纪行业的翘楚，Elvis
-              将继续凭借诚信和专业，继续带领团队为客户提供最好的贷款咨询和申请服务。
+              何超彬（Alfred He）持有保险协会（Insurance
+              Institute）特许保险专家（Chartered Insurance
+              Professional）资格证书，已在普通险（General
+              Insurance）领域从业多年。Alfred
+              是一个雄心壮志的商业人士，一直在寻求同样有抱负的、具有成长潜力的相关领域佼佼者，协助建立一个提供普通险方案的代理机构或是与其形成具有成长潜力的合作关系。他坚信齐心协力的努力，团队之间分享知识、经验和专业知识的工作氛围和模式，我们就能够为每个人创造双赢的局面。
             </p>
             <p>
-              连续两年全国华人贷款经纪中排名第一 <br />
-              连续X年加拿大卑诗省排名第一
-              <br />
-              连续 X 年荣获加拿大贷款经纪前三（Top 3）
-              <br /> 连续 4 年加拿大 TOP 75
-              <br />
-              贷款经纪 连续 2 年获得加拿大专业贷款经纪大奖“年度最佳贷款经纪”提名
-              <br />
-              2016 年以来贷款金额超过 10 亿加元，帮助超过数千名客户完成贷款审批
-              <br />
-              <a href="#">点击阅读更多</a>
+              Alfred合伙创立的AN Insurance Solutions
+              保险公司，正与温顶金融（Guaranti Wealthplus）合伙收购 InsureLine
+              Brokers Royal
+              皇家财产保险代理公司，其将作向温顶客户提供保险方案的服务平台。
             </p>
           </Col>
         </Row>
 
         <section>
           <h2>温顶团队成员</h2>
-        
-        <Row>
-          {members.map(member => {
-            return (
-              <Col
-                md="4"
-                sm="12"
-                className="member"
-                onClick={() => {
-                  handleOpen(member.name, member.intro)
-                }}
-              >
-                <div className="card-container">
-                  <img width="100%" src={member.image} />
-                  <div className="name">{member.name}</div>
-                </div>
-              </Col>
-            )
-          })}
-        </Row>
+
+          <Row>
+            {members.map(member => {
+              return (
+                <Col
+                  md="4"
+                  sm="12"
+                  className="member"
+                  onClick={() => {
+                    handleOpen(member.name, member.intro)
+                  }}
+                >
+                  <div className="card-container">
+                    <img width="100%" src={member.image} />
+                    <div className="name">{member.name}</div>
+                  </div>
+                </Col>
+              )
+            })}
+          </Row>
         </section>
-       
       </Container>
       <BotNav llink="/about" rlink="/join" left="公司介绍" right="加入我们" />
     </Layout>
