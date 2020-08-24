@@ -8,7 +8,7 @@ import { Link } from "gatsby"
 const Contentful = require("contentful")
 const Service = () => {
   const [post, setPost] = useState({})
-  const id = "6GiglUlWPXoQGac3ttEO1S"
+  const id = "6n1jO4pw7Z57jbVILPjTPV"
   useEffect(() => {
     const client = Contentful.createClient({
       space: "xxnh1wfwedpb",

@@ -5,6 +5,7 @@ import { Row, Col, Container, Modal, Card, Button } from "react-bootstrap"
 import "./team.scss"
 import { Link } from "gatsby"
 import BotNav from "../components/botNav"
+import { documentToHtmlString } from "@contentful/rich-text-html-renderer"
 
 const Contentful = require("contentful")
 
@@ -58,7 +59,8 @@ const Team = () => {
   const handleOpen = (title, content) => {
     setShowModal(true)
     setTitle(title)
-    setContent(content)
+
+    setContent(documentToHtmlString(content))
   }
 
   return (
@@ -67,7 +69,15 @@ const Team = () => {
         <Modal.Header closeButton>
           <Modal.Title>{title}</Modal.Title>
         </Modal.Header>
-        <Modal.Body>{content}</Modal.Body>
+        <Modal.Body>
+          {/*content*/}
+
+          <div
+            dangerouslySetInnerHTML={{
+              __html: content,
+            }}
+          ></div>
+        </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Close
@@ -77,7 +87,7 @@ const Team = () => {
       <Container className="team-services">
         <div className="title">
           <h1>我们的团队</h1>
-        {/**<h3>我们的团队副标题</h3> */}
+          {/**<h3>我们的团队副标题</h3> */}
         </div>
         <Row className="flexie">
           <Col md="5" sm="12" className="center-align">
@@ -161,14 +171,15 @@ const Team = () => {
           <h2>温顶团队成员</h2>
 
           <Row>
-            {members.map(member => {
+            {members.map((member, index) => {
               return (
                 <Col
+                key={index}
                   md="4"
                   sm="12"
                   className="member"
                   onClick={() => {
-                    handleOpen(member.name, member.intro)
+                    handleOpen(member.name, member.details)
                   }}
                 >
                   <div className="card-container">
