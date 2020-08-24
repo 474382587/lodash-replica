@@ -61,7 +61,7 @@ const Post = ({ location }) => {
                 <h3><a href="http://sv.mikecrm.com/LJVlNbV" target="_blank">Subscribe now</a></h3>
                 <p>Get personal finance info with our monthly round-up.</p>
               </div>
-              <div class="social-media">
+              <div class="social-media social-media-post">
                 <a
                   href="https://www.linkedin.com/company/guaranti-mortgages/?viewAsMember=true"
                   target="_blank"
