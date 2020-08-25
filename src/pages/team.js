@@ -115,8 +115,8 @@ const Team = () => {
               <br />
               2016 年以来贷款金额超过 10 亿加元，帮助超过数千名客户完成贷款审批
               {/** */}
-              <br />
-              <Link to="/teams/elvis">点击阅读更多</Link>
+              <br /><br />
+              <Link to="/post/?id=1GbifadyU3JQbShBMZlaRw">点击阅读更多</Link>
             </p>
           </Col>
         </Row>
@@ -133,8 +133,9 @@ const Team = () => {
               Ke）是温顶金融的首席顾问导师，连续九年闯入百万圆桌会员精英行列（MDRT
               TOT），也是大温最年轻的女性百万圆桌会员。Carmen
               持有多个金融牌照，目前名下管理资产过亿元。同时作为一名注册长者退休策划师的她，也是大温电台1320/1470
-              《财税教室》节目主持人。
-              {/**<br />
+              《财税教室》节目主持人。<br /><br />
+              <Link to="/post/?id=4SK92xBlvpolN4lzAL8YbE">点击阅读更多</Link>
+              {/**
               <a href="#">点击阅读更多</a> */}
             </p>
           </Col>

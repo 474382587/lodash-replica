@@ -58,8 +58,8 @@ const Post = ({ location }) => {
         <Col md="3" sm="12">
             <div className="subscribe-box">
               <div>
-                <h3><a href="http://sv.mikecrm.com/LJVlNbV" target="_blank">Subscribe now</a></h3>
-                <p>Get personal finance info with our monthly round-up.</p>
+                <h3><a href="http://sv.mikecrm.com/LJVlNbV" target="_blank">即刻订阅</a></h3>
+                <p>获得专属你的VIP资讯和优惠</p>
               </div>
               <div class="social-media social-media-post">
                 <a
