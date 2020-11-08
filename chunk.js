@@ -6,7 +6,7 @@ export const chunk = (arr, size = 1) => {
     // console.warn("You've entered the wrong input");
     return res;
   }
-  if (arr.size <= size) {
+  if (arr.length <= size) {
     return arr;
   }
 
