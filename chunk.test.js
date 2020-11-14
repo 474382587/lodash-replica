@@ -4,6 +4,12 @@ describe('Chunk', () => {
   test('Given a non-array, it should return an empty array', () => {
     expect(chunk(1)).toEqual([]);
   });
+  test('Given a non-array, it should return an empty array', () => {
+    expect(chunk('1')).toEqual([]);
+  });
+  test('Given a non-array, it should return an empty array', () => {
+    expect(chunk(undefined)).toEqual([]);
+  });
   test('Given an empty array, it should return an empty array', () => {
     expect(chunk([], 2)).toEqual([]);
   });
