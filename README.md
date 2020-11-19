@@ -4,3 +4,4 @@
 
 # Todo
 - Add CI to run tests
+- ES5
