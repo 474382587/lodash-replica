@@ -8,7 +8,22 @@ const { default: typeAssertion } = require('../helper/typeAssertion');
 const compat = (arr) => {
   typeAssertion(arr, 'array');
 
+  return es5(arr);
+};
+
+const es6 = (arr) => {
   return arr.filter((e) => !!e);
+};
+
+const es5 = (arr) => {
+  const res = [];
+  const length = arr.length;
+  for (let i = 0; i < length; i += 1) {
+    if (arr[i]) {
+      res.push(arr[i]);
+    }
+  }
+  return res;
 };
 
 export default compat;
