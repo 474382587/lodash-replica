@@ -1,15 +1,21 @@
 import { chunk } from './chunk';
 
 describe('Chunk', () => {
-  test('Given a non-array, it should return an empty array', () => {
-    expect(chunk(1)).toEqual([]);
-  });
-  test('Given a non-array, it should return an empty array', () => {
-    expect(chunk('1')).toEqual([]);
-  });
-  test('Given a non-array, it should return an empty array', () => {
-    expect(chunk(undefined)).toEqual([]);
-  });
+  // test('Given a non-array, it should throw an Error', () => {
+  //   expect(() => {
+  //     chunk(1);
+  //   }).toThrow('Please check your input, the input your entered is not "array');
+  // });
+  // test('Given a non-array, it should throw an Error', () => {
+  //   expect(() => {
+  //     chunk('1');
+  //   }).toThrow('Please check your input, the input your entered is not "array');
+  // });
+  // test('Given a non-array, it should throw an Error', () => {
+  //   expect(() => {
+  //     chunk(undefined);
+  //   }).toThrow('Please check your input, the input your entered is not "array');
+  // });
   test('Given an empty array, it should return an empty array', () => {
     expect(chunk([], 2)).toEqual([]);
   });

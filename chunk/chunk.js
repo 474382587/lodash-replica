@@ -1,17 +1,16 @@
+import typeAssertion from '../helper/typeAssertion';
+
 export const chunk = (arr, size = 1) => {
   const res = [];
 
-  if (!(arr instanceof Array)) {
-    // use Array.isArray instead
-    // console.warn("You've entered the wrong input");
-    return res;
-  }
+  typeAssertion(arr, 'array');
+
   if (arr.length <= size) {
     return arr;
   }
 
   let temp = [];
-  arr.forEach((item, index) => {
+  arr.forEach((item) => {
     if (temp.length < size) {
       temp.push(item);
     } else {
