@@ -1,4 +1,4 @@
-import typeAssertion from '../helper/typeAssertion';
+import typeAssertion from '../../helper/typeAssertion';
 
 export const chunk = (arr, size = 1) => {
   const res = [];
